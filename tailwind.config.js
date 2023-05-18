@@ -8,7 +8,20 @@ export const theme = {
     margin: {
       '343': '21.4rem',
       '101': '6.3rem',
-      '89': '5.5rem'
+      '89': '5.5rem',
+      '3':'2.9rem',
+      '7':'7rem',
+      '1.25':'1.25'
+    },
+    height: {
+      '2.5' : '2.5rem',
+      '3' : '3.1rem',
+      '7':'7rem'
+    },
+    width: {
+      '32':'32rem',
+      '29':'29rem',
+      '15':'15rem'
     },
 
     fontSize: {
@@ -24,8 +37,8 @@ export const theme = {
     inset: {
       '230': '14.3rem',
       '127': '10rem',
-      '995':'59rem',
-      '888':"55.rem"
+      '59':'59rem',
+      '55':"55rem"
     },
     padding: {
       '200': '12.5rem',

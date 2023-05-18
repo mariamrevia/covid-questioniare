@@ -11,10 +11,12 @@
       </transition>
       <transition name="nested">
         <div v-show="showText" class="w-[200px] flex-wrap text-center with-shadow">
-            <p class="
-            flex items-center justify-center mt-101 text-30 font-bold from-neutral-700">
-              {{ message }}
-            </p>   
+            <router-link to="/identification">
+                <p class="
+                flex items-center justify-center mt-101 text-30 font-bold from-neutral-700">
+                  {{ message }}
+                </p>   
+            </router-link>
         </div>
       </transition>
   
