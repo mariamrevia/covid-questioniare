@@ -1,5 +1,4 @@
 <template>
-    
     <CustomForm  @submit="onSubmit">
   <BaseField  v-for="{ as, name, label,rules, value, ...attrs } in schema.fields"
         :key="name"
@@ -24,7 +23,7 @@
   </template>
   
   <script>
-  import BaseField from "./BaseInput.vue"
+  import BaseField from "./BaseField.vue"
   import { mapState, mapActions } from 'vuex'
   import { Form } from 'vee-validate'
   import navigationButton from "../assets/images/Vector 2.png"

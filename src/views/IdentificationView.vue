@@ -1,6 +1,7 @@
- 
+
 <template>
     <div>
+        <TheHeader/>
            <div class="pl-200 pr-165 flex flex-row justify-between">
                <IdentificationForm :schema="formSchema"/>
                <div class="relative">
@@ -17,12 +18,14 @@
    import mainLogo from '../assets/images/IdentificationImage.png';
    import linePhoto from '../assets/images/line.png';
    import IdentificationForm from '../components/IdentificationForm.vue';
+   import TheHeader from '../components/layout/TheHeader.vue';
    import { mapState } from 'vuex';
    
    export default {
        components: {
-        IdentificationForm
-               
+        IdentificationForm,
+        TheHeader
+                 
        },
        data: () => ({
        mainLogo,
