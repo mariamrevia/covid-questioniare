@@ -24,19 +24,23 @@ export default {
   props: {
   as: {
     type: String,
-    required: true
+    required: true,
+    default:'',
   },
   name: {
     type: String,
-    required: true
+    required: true,
+    default:'',
   },
   label: {
     type: String,
-    required: true
+    required: false,
+    default: '',
   },
   value: {
     type: [String, Number],
-    default: null
+    required: true,
+    default: null,
   },
   placeholder: {
     type: String,
@@ -44,11 +48,13 @@ export default {
   },
   rules: {
     type: Boolean,
+    required:false,
     default: false
   },
   type: {
     type: String,
-    default: ''
+    required:false,
+    default: '',
   }
 },
   methods: {

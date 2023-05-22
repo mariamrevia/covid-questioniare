@@ -1,8 +1,10 @@
 import { createStore } from 'vuex'
 import Identification from './Identification/index.js'
+import CovidQuestion from './CovidQuestion/index.js'
 
 export const store = createStore({
   modules: {
-    IdentificationModel: Identification
+    IdentificationModel: Identification,
+    CovidQuestionModel:CovidQuestion
   }
 })

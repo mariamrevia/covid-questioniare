@@ -28,3 +28,14 @@ defineRule('alphabet', value => {
   return true;
 });
 
+
+
+defineRule('bothFieldsRequired', (value, [dependentField], ctx) => {
+  const hasValue = value !== null && value !== undefined && value !== '';
+
+  if (hasValue && !ctx.form[dependentField]) {
+    return 'აუცილებელია შეავსოთ ორივე ველი';
+  }
+
+  return true;
+});
