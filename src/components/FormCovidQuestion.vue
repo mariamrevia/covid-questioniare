@@ -7,9 +7,7 @@
           type="radio"
           as="input"
           name="had_covid"
-          id="yes"
           v-model="data.had_covid"
-          @input="updateValue"
           value="yes"
           label="კი"
           rules="required"
@@ -18,9 +16,7 @@
           type="radio"
           as="input"
           name="had_covid"
-          id="no"
           v-model="data.had_covid"
-          @input="updateValue"
           value="no"
           label="არა"
           rules="required"
@@ -31,7 +27,6 @@
           name="had_covid"
           id="have_right_now"
           v-model="data.had_covid"
-          @input="updateValue"
           value="have_right_now"
           label="ახლა მაქვს"
           rules="required"
@@ -46,10 +41,7 @@
           type="radio"
           as="input"
           name="had_antibody_test"
-          id="yes"
-          @input="updateValue"
           v-model="data.had_antibody_test"
-          :checked-value="'yes'"
           value="yes"
           label="კი"
           rules="required"
@@ -59,9 +51,6 @@
           as="input"
           name="had_antibody_test"
           v-model="data.had_antibody_test"
-          :checked-value="'no'"
-          id="no"
-          @input="updateValue"
           value="no"
           label="არა"
           rules="required"
@@ -147,13 +136,15 @@ export default {
   },
 
   computed: {
-    data() {
-      let questionnaire = this.$store.getters['CovidQuestionModel/getData']
-      if (!questionnaire) {
-        questionnaire = {}
+    data: {
+      get() {
+        return this.$store.getters['CovidQuestionModel/getData']
+      },
+      set(value, name) {
+        this.$store.dispatch('CovidQuestionModel/updateData', value, name)
       }
-      return questionnaire
     },
+
     testDate() {
       return this.data.antibodies.test_date
     },
@@ -168,8 +159,6 @@ export default {
   methods: {
     updateValue(value, name) {
       this.$store.dispatch('CovidQuestionModel/updateData', { value, name })
-      console.log(value, name)
-      console.log(this.data.had_covid)
     },
     updateTestDate(value, name) {
       this.$store.commit('CovidQuestionModel/updateTestDate', { value, name })
