@@ -4,15 +4,12 @@
     <Field
       class="w-[513px] h-[50px] border border-black bg-transparent pl-4"
       :as="as"
-      :id="name"
       :value="value"
       @input="updateValue($event.target.value, name)"
       :name="name"
       :rules="rules"
       :placeholder="placeholder"
-      :attrs="attrs"
-      :type="type"
-      
+      :type="type"    
     />
     <ErrorMessage class="text-red" :name="name"></ErrorMessage>
   </div>
@@ -25,15 +22,35 @@ export default {
     ErrorMessage
   },
   props: {
-    as: String,
-    name: String,
-    label: String,
-    value: [String, Number],
-    placeholder:String,
-    attrs: Object,
-    rules:Boolean,
-    type:String
+  as: {
+    type: String,
+    required: true
   },
+  name: {
+    type: String,
+    required: true
+  },
+  label: {
+    type: String,
+    required: true
+  },
+  value: {
+    type: [String, Number],
+    default: null
+  },
+  placeholder: {
+    type: String,
+    default: ''
+  },
+  rules: {
+    type: Boolean,
+    default: false
+  },
+  type: {
+    type: String,
+    default: ''
+  }
+},
   methods: {
     updateValue(value, name) {
       this.$emit('input', value, name);

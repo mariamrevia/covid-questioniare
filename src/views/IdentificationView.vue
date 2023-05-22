@@ -2,7 +2,7 @@
   <div>
     <TheHeader />
     <div class="pl-200 pr-165 flex flex-row justify-between">
-      <IdentificationForm />
+      <FormIdentification />
       <div class="relative">
         <img :src="mainLogo" alt="mainLogo" class="-z-10" />
         <transition appear name="line">
@@ -16,13 +16,13 @@
 <script>
 import mainLogo from '@/assets/images/IdentificationImage.png'
 import linePhoto from '@/assets/images/line.png'
-import IdentificationForm from '@/components/IdentificationForm.vue'
+import FormIdentification from '@/components/FormIdentification.vue'
 import TheHeader from '@/components/layout/TheHeader.vue'
 
 
 export default {
   components: {
-    IdentificationForm,
+    FormIdentification,
     TheHeader
   },
   data: () => ({

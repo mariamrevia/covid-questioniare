@@ -1,5 +1,5 @@
 <template>
-  <CustomForm @submit="onSubmit">
+  <IdentificationForm @submit="onSubmit">
     <InputText
       as="input"
       id="first_name"
@@ -37,7 +37,7 @@
       <hr class="w-[237px] h-[2px] bg-black mb-[20px]" />
       <p>*-ით მონიშნული ველების შევსება სავალდებულოა</p>
     </div>
-  </CustomForm>
+  </IdentificationForm>
 </template>
 
 <script>
@@ -47,7 +47,7 @@ import { mapGetters } from 'vuex'
 import navigationButton from '@/assets/images/Vector 2.png'
 export default {
   components: {
-    CustomForm: Form,
+    IdentificationForm: Form,
     InputText
   },
 
