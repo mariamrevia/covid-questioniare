@@ -6,4 +6,8 @@ import router from "./router/index"
 import { store } from './store';
 import "./config/vee-validate/rules";
 
-createApp(App).use(router).use(store).mount('#app');
+
+const app = createApp(App)
+app.use(router)
+app.use(store)
+app.mount('#app')
