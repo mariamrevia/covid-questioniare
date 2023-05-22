@@ -14,10 +14,10 @@
   </div>
 </template>
 <script>
-import mainLogo from '../assets/images/IdentificationImage.png'
-import linePhoto from '../assets/images/line.png'
-import IdentificationForm from '../components/IdentificationForm.vue'
-import TheHeader from '../components/layout/TheHeader.vue'
+import mainLogo from '@/assets/images/IdentificationImage.png'
+import linePhoto from '@/assets/images/line.png'
+import IdentificationForm from '@/components/IdentificationForm.vue'
+import TheHeader from '@/components/layout/TheHeader.vue'
 
 
 export default {

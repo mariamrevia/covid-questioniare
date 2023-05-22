@@ -44,7 +44,7 @@
 import InputText from './ui/InputText.vue'
 import { Form } from 'vee-validate'
 import { mapGetters } from 'vuex'
-import navigationButton from '../assets/images/Vector 2.png'
+import navigationButton from '@/assets/images/Vector 2.png'
 export default {
   components: {
     CustomForm: Form,
