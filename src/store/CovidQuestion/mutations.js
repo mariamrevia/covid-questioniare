@@ -9,7 +9,7 @@ export default {
     },
     updateData(state, payload) {
       console.log(state , payload)
-      state[payload.name] = payload.value
+      state.data[payload.name] = payload.value
   
      
     }

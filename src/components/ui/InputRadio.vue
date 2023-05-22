@@ -58,7 +58,7 @@ export default {
       default: Boolean
     }
   },
-  emits: ['update:modelValue'],
+  emits: ['update:modelValue' ],
   methods: {
     updateValue(value, name) {
       this.$emit('update:modelValue', value, name)

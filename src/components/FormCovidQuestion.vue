@@ -75,9 +75,9 @@
       >
         <InputText
           type="date"
-          name="test_date"
-          :value="testDate"
-          @input="updateTestDate($event.target.value, 'test_date')"
+          name="covid_sickness_date"
+          :value="data.covid_sickness_date"
+          @input="updateValue"
           as="input"
           placeholder="რიცხვი"
           rules="required"

@@ -4,18 +4,14 @@ import actions from './actions'
 
 export default {
   namespaced: true,
-
   state: {
-    data: {
-      had_covid: '',
-      had_antibody_test: null,
-      covid_sickness_date: '',
-      antibodies: {
-        test_date: '',
-        number: null
-      }
+    vaccinationData: {
+      had_vaccine: '',
+      vaccination_stage: '',
+      i_am_waiting: ''
     }
   },
+
   mutations: mutations,
   getters: getters,
   actions: actions
