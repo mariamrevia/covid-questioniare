@@ -1,23 +1,24 @@
 <template>
   <div class="flex flex-col">
-    <label class="mt-3 h-2.5 font-bold text-22" :for="name">{{ label }}</label>
+    <label class="mt-[47px] mb-[20px] font-bold text-[20px]" :for="name">{{ label }}</label>
     <Field
-      class="w-32 h-3 border border-black bg-transparent pl-4"
+      class="w-[513px] h-[50px] border border-black bg-transparent pl-4"
       :as="as"
       :id="name"
       :value="value"
       @input="updateValue($event.target.value, name)"
       :name="name"
       :rules="rules"
-      v-bind="attrs"
+      :placeholder="placeholder"
+      :attrs="attrs"
+      :type="type"
+      
     />
     <ErrorMessage class="text-red" :name="name"></ErrorMessage>
   </div>
 </template>
-
 <script>
-import { Field, ErrorMessage } from 'vee-validate'
-
+import { Field,ErrorMessage } from 'vee-validate'
 export default {
   components: {
     Field,
@@ -28,14 +29,16 @@ export default {
     name: String,
     label: String,
     value: [String, Number],
+    placeholder:String,
     attrs: Object,
-    rules: Boolean
+    rules:Boolean,
+    type:String
   },
   methods: {
     updateValue(value, name) {
-      this.$emit('input', value, name)
-      console.log(value)
-    }
-  }
+      this.$emit('input', value, name);
+     
+  },}
+
 }
 </script>

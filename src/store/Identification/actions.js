@@ -1,5 +1,7 @@
 export default {
-  updateData(context, payload) {
-    context.commit('updateData', payload)
-  }
-}
+  updateIdentificationtData({ commit }, payload) {
+    commit('updateData', payload);
+  },
+};
+
+

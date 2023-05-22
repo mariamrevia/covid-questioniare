@@ -1,6 +1,6 @@
 export default {
-  updateIdentificationData(state, payload) {
+  updateData(state, payload) {
     console.log(payload)
-    state.Identification[payload.field] = payload.value
-  }
-}
+    state.IdentificationData[payload.name] = payload.value;
+  },
+};

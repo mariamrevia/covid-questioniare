@@ -2,7 +2,7 @@
   <div>
     <TheHeader />
     <div class="pl-200 pr-165 flex flex-row justify-between">
-      <IdentificationForm :schema="formSchema" />
+      <IdentificationForm />
       <div class="relative">
         <img :src="mainLogo" alt="mainLogo" class="-z-10" />
         <transition appear name="line">
@@ -18,7 +18,7 @@ import mainLogo from '../assets/images/IdentificationImage.png'
 import linePhoto from '../assets/images/line.png'
 import IdentificationForm from '../components/IdentificationForm.vue'
 import TheHeader from '../components/layout/TheHeader.vue'
-import { mapState } from 'vuex'
+
 
 export default {
   components: {
@@ -29,36 +29,7 @@ export default {
     mainLogo,
     linePhoto
   }),
-  computed: {
-    ...mapState(['formData']),
-    formSchema() {
-      return {
-        fields: [
-          {
-            label: 'სახელი*',
-            name: 'first_name',
-            as: 'input',
-            value: this.formData.first_name,
-            rules: 'required|minLength|alphabet'
-          },
-          {
-            label: 'გვარი*',
-            name: 'last_name',
-            as: 'input',
-            value: this.formData.last_name,
-            rules: 'required|minLength|alphabet'
-          },
-          {
-            label: 'მეილი*',
-            name: 'email',
-            as: 'input',
-            value: this.formData.email,
-            rules: 'required|email'
-          }
-        ]
-      }
-    }
-  }
+ 
 }
 </script>
 <style>
