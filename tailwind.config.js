@@ -31,7 +31,8 @@ export const theme = {
       maincolor: '#EAEAEA',
       yellow: '#D6D16E',
       black: '#232323',
-      red: '#F15524'
+      red: '#F15524',
+      green:'#208298'
     },
     inset: {
       230: '14.3rem',

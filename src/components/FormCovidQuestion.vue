@@ -1,5 +1,5 @@
 <template>
-  <CovidQuestionForm @submit="onSubmit">
+  <CovidQuestion-Form @submit="onSubmit">
     <CovidQuestion/>
     <div>
       <router-link to="/identification">
@@ -9,7 +9,7 @@
         <img  :src="navigationButton" />
       </button>
     </div>
-  </CovidQuestionForm>
+  </CovidQuestion-Form>
 </template>
 <script>
 import { Form } from 'vee-validate'
