@@ -157,7 +157,7 @@ export default {
 
   methods: {
     onSubmit() {
-      this.$router.push('/')
+      this.$router.push('/advices')
     },
     navigateBack() {
       this.$router.replace('/covidquestion')
