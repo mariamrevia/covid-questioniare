@@ -1,5 +1,5 @@
 <template>
-    <TheHeader />
+    <TheHeader currentPage="4"/>
     <div class="pl-200 pr-165 flex flex-row justify-between">
       <FormAdvices />
       <div class="relative">
@@ -14,7 +14,7 @@
   import FormAdvices from '@/components/FormAdvices.vue'
   import mainLogo from '@/assets/images/mainlogo4.png'
   import bike from '@/assets/images/bike.png'
-  import TheHeader from '@/components/layout/TheHeader.vue'
+  import TheHeader from '@/components/shared/TheHeader.vue'
   export default {
     components: {
       TheHeader,

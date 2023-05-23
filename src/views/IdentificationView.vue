@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TheHeader />
+    <TheHeader currentPage="1"/>
     <div class="pl-200 pr-165 flex flex-row justify-between">
       <FormIdentification />
       <div class="relative">
@@ -17,7 +17,7 @@
 import mainLogo from '@/assets/images/IdentificationImage.png'
 import linePhoto from '@/assets/images/line.png'
 import FormIdentification from '@/components/FormIdentification.vue'
-import TheHeader from '@/components/layout/TheHeader.vue'
+import TheHeader from '@/components/shared/TheHeader.vue'
 
 
 export default {
