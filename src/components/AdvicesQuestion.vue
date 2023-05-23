@@ -8,6 +8,7 @@
         name="non_formal_meetings"
         value="twice_a_week"
         label="კვირაში ორჯერ"
+        v-model="data.non_formal_meetings"
         rules="required"
       />
       <InputRadio
@@ -16,6 +17,7 @@
         name="non_formal_meetings"
         value="once_a_week"
         label="კვირაში ერთხელ"
+        v-model="data.non_formal_meetings"
         rules="required"
       />
       <InputRadio
@@ -24,6 +26,7 @@
         name="non_formal_meetings"
         value="once_in_a_two_weeks"
         label="ორ კვირაში ერთხელ"
+        v-model="data.non_formal_meetings"
         rules="required"
       />
       <InputRadio
@@ -32,6 +35,7 @@
         name="non_formal_meetings"
         value="once_in_a_month"
         label="თვეში ერთხელ"
+        v-model="data.non_formal_meetings"
         rules="required"
       />
       <ErrorMessage name="non_formal_meetings" />
@@ -42,6 +46,7 @@
         type="radio"
         as="input"
         name="number_of_days_from_office"
+        v-model="data.number_of_days_from_office"
         value="0"
         label="0"
         rules="required"
@@ -49,6 +54,7 @@
       <InputRadio
         type="radio"
         as="input"
+        v-model="data.number_of_days_from_office"
         name="number_of_days_from_office"
         value="1"
         label="1"
@@ -58,6 +64,7 @@
         type="radio"
         as="input"
         name="number_of_days_from_office"
+        v-model="data.number_of_days_from_office"
         value="2"
         label="2"
         rules="required"
@@ -66,6 +73,7 @@
         type="radio"
         as="input"
         name="number_of_days_from_office"
+        v-model="data.number_of_days_from_office"
         value="3"
         label="3"
         rules="required"
@@ -74,6 +82,7 @@
         type="radio"
         as="input"
         name="number_of_days_from_office"
+        v-model="data.number_of_days_from_office"
         value="4"
         label="4"
         rules="required"
@@ -82,6 +91,7 @@
         type="radio"
         as="input"
         name="number_of_days_from_office"
+        v-model="data.number_of_days_from_office"
         value="5"
         label="5"
         rules="required"
@@ -94,11 +104,10 @@
 import { ErrorMessage } from 'vee-validate'
 import InputRadio from './ui/InputRadio.vue'
 export default {
-    components:{
-        InputRadio,
-        ErrorMessage
-        
-    },
+  components: {
+    InputRadio,
+    ErrorMessage
+  },
   data() {
     return {
       paragraph1:
@@ -107,10 +116,19 @@ export default {
         ' პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.',
       NonFormalMeetings:
         'რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*',
-      WorkingInOffice: 'კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*',
-    
+      WorkingInOffice: 'კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*'
     }
-    
+  },
+
+  computed: {
+    data: {
+      get() {
+        return this.$store.getters['AdvicesModel/AdvicesData']
+      },
+      set(value, name) {
+        this.$store.dispatch('AdvicesModel/updateAdvicesData', value, name)
+      }
+    }
   }
 }
 </script>

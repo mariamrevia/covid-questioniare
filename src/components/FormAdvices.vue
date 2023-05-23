@@ -4,21 +4,23 @@
     <br />
     <p class="w-32">{{ paragraph2 }}</p>
     <Advices-Form>
-     <AdvicesQuestion/>
+      <AdvicesQuestion />
       <div class="w-32 flex flex-col">
         <p class="font-bold text-22 mt-3 mb-2">{{ OpinionAboutMeeting }}</p>
         <textarea
+          :value="AdvicesData.what_about_meetings_in_live"
           class="bg-transparent border-[0.8px] outline-none h-[184px] border-black mt-[20px]"
           name="what_about_meetings_in_live"
-          @input="updateValue"
+          @input="updateValue($event.target.value, 'what_about_meetings_in_live')"
         ></textarea>
         <p class="font-bold mb-2 whitespace-break-spaces text-22 mt-3">
           {{ OpiniionAboutEnviroment }}
         </p>
         <textarea
+          :value="AdvicesData.what_about_meetings_in_live"
           class="bg-transparent border-[0.8px] outline-none h-[184px] border-black mt-[20px]"
           name="what_about_meetings_in_live"
-          @input="updateValue"
+          @input="updateValue($event.target.value, 'what_about_meetings_in_live')"
         ></textarea>
       </div>
       <div class="flex flex-row justify-end">
@@ -40,6 +42,7 @@
 <script>
 import { Form } from 'vee-validate'
 import AdvicesQuestion from './AdvicesQuestion.vue'
+import { mapGetters } from 'vuex'
 import vector from '@/assets/images/Vector7.png'
 export default {
   components: {
@@ -51,8 +54,17 @@ export default {
     return {
       vector,
       OpinionAboutMeeting: 'რას ფიქრობ ფიზიკურ შეკრებებზე?',
-      OpiniionAboutEnviroment:'რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?'
+      OpiniionAboutEnviroment:
+        'რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?'
+    }
+  },
 
+  computed: {
+    ...mapGetters('AdvicesModel', ['AdvicesData'])
+  },
+  methods: {
+    updateValue(value, name) {
+      this.$store.dispatch('AdvicesModel/updateAdviceData', { value, name })
     }
   }
 }
