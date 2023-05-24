@@ -82,6 +82,7 @@
         :value="testDate"
         @input="updateTestDate($event.target.value, 'test_date')"
         as="input"
+        type="date"
         placeholder="რიცხვი"
         rules="bothFieldsRequired:number"
       />
@@ -92,6 +93,7 @@
         :value="testNumber"
         @input="updateTestNumber($event.target.value, 'number')"
         as="input"
+        type="number"
         placeholder="ანტისხეულების რაოდენობა"
         rules="bothFieldsRequired:test_date"
       />

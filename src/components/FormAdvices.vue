@@ -3,7 +3,7 @@
     <p class="w-32">{{ paragraph1 }}</p>
     <br />
     <p class="w-32">{{ paragraph2 }}</p>
-    <Advices-Form>
+    <Advices-Form @submit="onSubmit">
       <AdvicesQuestion />
       <div class="w-32 flex flex-col">
         <p class="font-bold text-22 mt-3 mb-2">{{ OpinionAboutMeeting }}</p>
@@ -25,6 +25,7 @@
       </div>
       <div class="flex flex-row justify-end">
         <button
+          type="submit"
           class="bg-green text-white text-lg mt-[54px] h-[56px] w-[180px] rounded-[42px] content-end"
         >
           დასრულება
@@ -55,16 +56,49 @@ export default {
       vector,
       OpinionAboutMeeting: 'რას ფიქრობ ფიზიკურ შეკრებებზე?',
       OpiniionAboutEnviroment:
-        'რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?'
+       'რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?'
     }
   },
 
   computed: {
-    ...mapGetters('AdvicesModel', ['AdvicesData'])
+    ...mapGetters({
+    AdvicesData: 'AdvicesModel/AdvicesData',
+    IdentificationData: 'IdentificationModel/IdentificationData',
+    vaccinationData: 'vaccinationModel/vaccinationData',
+    getData: 'CovidQuestionModel/getData'
+  }),
+    combinedData() {
+      let hadVaccine
+      let antiBodyTest
+      if (this.vaccinationData.had_vaccine === 'yes') {
+        hadVaccine = true
+      } else if (this.vaccinationData.had_vaccine === 'no') {
+        hadVaccine = false
+      }
+
+      if (this.getData.had_antibody_test === 'yes') {
+        antiBodyTest = true
+      } else if (this.getData.had_antibody_test === 'no') {
+        antiBodyTest = false
+      }
+      const numberOfdaysInOffice = Number(this.AdvicesData.number_of_days_from_office)
+      return {
+        ...this.AdvicesData,
+        ...this.IdentificationData,
+        ...this.vaccinationData,
+        ...this.getData,
+        had_vaccine: hadVaccine,
+        had_antibody_test: antiBodyTest,
+        number_of_days_from_office: numberOfdaysInOffice
+      }
+    }
   },
   methods: {
     updateValue(value, name) {
       this.$store.dispatch('AdvicesModel/updateAdviceData', { value, name })
+    },
+    onSubmit() {
+      this.$store.dispatch('AdvicesModel/sendDatatoAPI', this.combinedData)
     }
   }
 }

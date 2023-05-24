@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@vee-validate/rules": "^4.9.4",
+    "axios": "^1.4.0",
     "vee-validate": "^4.9.4",
     "vue": "^3.3.2",
+    "vue-axios": "^3.5.2",
     "vue-router": "^4.2.0",
     "vuex": "^4.0.2"
   },

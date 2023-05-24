@@ -8,7 +8,7 @@ export default {
   state: {
     data: {
       had_covid: '',
-      had_antibody_test: null,
+      had_antibody_test: '',
       covid_sickness_date: '',
       antibodies: {
         test_date: '',

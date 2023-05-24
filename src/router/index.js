@@ -4,6 +4,7 @@ import IdentficationView from '@/views/IdentificationView.vue'
 import CovidQuestionView from '@/views/CovidQuestionView.vue'
 import VaccinationView from '@/views/VaccinationView.vue'
 import AdvicesView from '@/views/AdvicesView.vue'
+import ThankYouView from '@/views/ThankYouView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -12,7 +13,8 @@ const router = createRouter({
     { path: '/identification', component: IdentficationView },
     { path: '/covidquestion', component: CovidQuestionView },
     { path: '/vaccination', component: VaccinationView },
-    { path: '/advices', component: AdvicesView }
+    { path: '/advices', component: AdvicesView },
+    { path: '/thankyou', component: ThankYouView }
   ]
 })
 
