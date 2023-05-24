@@ -15,12 +15,15 @@ export const theme = {
     height: {
       2.5: '2.5rem',
       3: '3.1rem',
-      7: '7rem'
+      7: '7rem',
+      11: '11.5rem',
+      3.6: '3.6rem'
     },
     width: {
       32: '32rem',
       29: '29rem',
-      15: '15rem'
+      15: '15rem',
+      11: '11rem'
     },
     fontSize: {
       30: '1.8rem',
@@ -32,7 +35,7 @@ export const theme = {
       yellow: '#D6D16E',
       black: '#232323',
       red: '#F15524',
-      green:'#208298'
+      green: '#208298'
     },
     inset: {
       230: '14.3rem',
@@ -40,7 +43,9 @@ export const theme = {
       59: '59rem',
       55: '55rem',
       3.75: '3.75rem',
-      5:'5rem'
+      5: '5rem',
+      112:'112rem',
+      63:'63rem'
     },
     padding: {
       200: '12.5rem',

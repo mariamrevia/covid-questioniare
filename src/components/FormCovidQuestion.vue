@@ -14,7 +14,7 @@
 <script>
 import { Form } from 'vee-validate'
 import navigationButton from '@/assets/images/Vector2.png'
-import CovidQuestion from './CovidQuestion.vue'
+import CovidQuestion from './QuestionCovid.vue'
 import vector from '@/assets/images/Vector7.png'
 export default {
   components: {
