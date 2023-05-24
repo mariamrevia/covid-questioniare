@@ -5,5 +5,6 @@ export async function sendData(payload) {
     await axios.post('/create', payload)
   } catch (error) {
     console.log(error)
+    throw error; 
   }
 }
