@@ -1,5 +1,5 @@
 <template>
-  <TheHeader />
+  <TheHeader currentPage="3"/>
   <div class="pl-200 pr-165 flex flex-row justify-between">
     <FormVaccination />
     <div class="relative">
@@ -15,7 +15,7 @@
 import FormVaccination from '@/components/FormVaccination.vue'
 import mainLogo from '@/assets/images/main logo (3).png'
 import doctor from '@/assets/images/doctor2.png'
-import TheHeader from '@/components/layout/TheHeader.vue'
+import TheHeader from '@/components/shared/TheHeader.vue'
 export default {
   components: {
     TheHeader,

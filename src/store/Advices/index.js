@@ -6,14 +6,11 @@ export default {
   namespaced: true,
 
   state: {
-    data: {
-      had_covid: '',
-      had_antibody_test: '',
-      covid_sickness_date: '',
-      antibodies: {
-        test_date: '',
-        number: null
-      }
+    AdvicesData: {
+      non_formal_meetings: '',
+      number_of_days_from_office: null,
+      what_about_meetings_in_live: '',
+      tell_us_your_opinion_about_us: ''
     }
   },
   mutations: mutations,
