@@ -8,7 +8,7 @@
       <div class="w-32 flex flex-col">
         <p class="font-bold text-22 mt-3 mb-2">{{ OpinionAboutMeeting }}</p>
         <textarea
-          :value="AdvicesData.what_about_meetings_in_live"
+          :value="advicesData.what_about_meetings_in_live"
           class="bg-transparent border-1 outline-none h-11 border-black mt-1.25"
           name="what_about_meetings_in_live"
           @input="updateValue($event.target.value, 'what_about_meetings_in_live')"
@@ -17,7 +17,7 @@
           {{ OpiniionAboutEnviroment }}
         </p>
         <textarea
-          :value="AdvicesData.what_about_meetings_in_live"
+          :value="advicesData.what_about_meetings_in_live"
           class="bg-transparent border-1 outline-none h-11 border-black mt-1.25"
           name="what_about_meetings_in_live"
           @input="updateValue($event.target.value, 'what_about_meetings_in_live')"
@@ -55,17 +55,18 @@ export default {
     return {
       vector,
       OpinionAboutMeeting: 'რას ფიქრობ ფიზიკურ შეკრებებზე?',
-      OpiniionAboutEnviroment:'რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?'
+      OpiniionAboutEnviroment:
+        'რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?'
     }
   },
 
   computed: {
     ...mapGetters({
-    AdvicesData: 'AdvicesModel/AdvicesData',
-    IdentificationData: 'IdentificationModel/IdentificationData',
-    vaccinationData: 'vaccinationModel/vaccinationData',
-    getData: 'CovidQuestionModel/getData'
-  }),
+      advicesData: 'AdvicesModel/advicesData',
+      identificationData: 'IdentificationModel/identificationData',
+      vaccinationData: 'vaccinationModel/vaccinationData',
+      getData: 'CovidQuestionModel/getData'
+    }),
     combinedData() {
       let hadVaccine
       let antiBodyTest
@@ -80,10 +81,10 @@ export default {
       } else if (this.getData.had_antibody_test === 'no') {
         antiBodyTest = false
       }
-      const numberOfdaysInOffice = Number(this.AdvicesData.number_of_days_from_office)
+      const numberOfdaysInOffice = Number(this.advicesData.number_of_days_from_office)
       return {
-        ...this.AdvicesData,
-        ...this.IdentificationData,
+        ...this.advicesData,
+        ...this.identificationData,
         ...this.vaccinationData,
         ...this.getData,
         had_vaccine: hadVaccine,
@@ -94,7 +95,7 @@ export default {
   },
   methods: {
     updateValue(value, name) {
-      this.$store.dispatch('AdvicesModel/updateAdviceData', { value, name })
+      this.$store.dispatch('AdvicesModel/updateAdvicesData', { value, name })
     },
     onSubmit() {
       this.$store.dispatch('AdvicesModel/sendDatatoAPI', this.combinedData)

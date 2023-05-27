@@ -1,6 +1,7 @@
 export default {
   updateData(state, payload) {
     console.log(payload)
-    state.IdentificationData[payload.name] = payload.value;
-  },
-};
+    state.identificationData[payload.name] = payload.value
+    localStorage.setItem('identificationData', JSON.stringify(state))
+  }
+}

@@ -5,7 +5,7 @@
       id="first_name"
       name="first_name"
       @input="updateValue"
-      :value="IdentificationData.first_name"
+      :value="identificationData.first_name"
       label="სახელი"
       rules="required|minLength|alphabet"
     />
@@ -15,7 +15,7 @@
       id="last_name"
       label="გვარი"
       @input="updateValue"
-      :value="IdentificationData.last_name"
+      :value="identificationData.last_name"
       rules="required|minLength|alphabet"
     />
 
@@ -25,7 +25,7 @@
       label="მეილი"
       @input="updateValue"
       id="email"
-      :value="IdentificationData.email"
+      :value="identificationData.email"
       rules="required|email"
     />
 
@@ -57,7 +57,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('IdentificationModel', ['IdentificationData'])
+    ...mapGetters('IdentificationModel', ['identificationData'])
   },
  
   methods: {

@@ -1,8 +1,5 @@
-
-  export default {
-    vaccinationData (state) {
-        return state.vaccinationData
-
-    }
+export default {
+  vaccinationData(state) {
+    return state.vaccinationData
+  }
 }
-  

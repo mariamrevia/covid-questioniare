@@ -148,10 +148,15 @@ export default {
     data: {
       get() {
         return this.$store.getters['vaccinationModel/vaccinationData']
-      },
-      set(value, name) {
-        this.$store.dispatch('vaccinationModel/updateVaccinationData', value, name)
       }
+    }
+  },
+  watch: {
+    data: {
+      handler(updatedData) {
+        this.$store.dispatch('vaccinationModel/updateVaccinationData', updatedData)
+      },
+      deep: true
     }
   },
 

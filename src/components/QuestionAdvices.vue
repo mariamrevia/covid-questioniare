@@ -123,11 +123,16 @@ export default {
   computed: {
     data: {
       get() {
-        return this.$store.getters['AdvicesModel/AdvicesData']
-      },
-      set(value, name) {
-        this.$store.dispatch('AdvicesModel/updateAdvicesData', value, name)
+        return this.$store.getters['AdvicesModel/advicesData']
       }
+    }
+  },
+  watch: {
+    data: {
+      handler(updatedData) {
+        this.$store.dispatch('AdvicesModel/updateAdvicesData', updatedData)
+      },
+      deep: true
     }
   }
 }
