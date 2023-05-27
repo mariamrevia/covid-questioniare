@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-20">
+  <div class="mb-20 overflow-y-auto no-scrollbar h-50">
     <p class="w-32">{{ paragraph1 }}</p>
     <br />
     <p class="w-32">{{ paragraph2 }}</p>
@@ -9,7 +9,7 @@
         <p class="font-bold text-22 mt-3 mb-2">{{ OpinionAboutMeeting }}</p>
         <textarea
           :value="advicesData.what_about_meetings_in_live"
-          class="bg-transparent border-1 outline-none h-11 border-black mt-1.25"
+          class="bg-transparent border outline-none h-11 border-black mt-1.25"
           name="what_about_meetings_in_live"
           @input="updateValue($event.target.value, 'what_about_meetings_in_live')"
         ></textarea>
@@ -17,10 +17,10 @@
           {{ OpiniionAboutEnviroment }}
         </p>
         <textarea
-          :value="advicesData.what_about_meetings_in_live"
-          class="bg-transparent border-1 outline-none h-11 border-black mt-1.25"
-          name="what_about_meetings_in_live"
-          @input="updateValue($event.target.value, 'what_about_meetings_in_live')"
+          :value="advicesData.tell_us_your_opinion_about_us"
+          class="bg-transparent border outline-none h-11 border-black mt-1.25"
+          name="tell_us_your_opinion_about_us"
+          @input="updateValue($event.target.value, 'tell_us_your_opinion_about_us')"
         ></textarea>
       </div>
       <div class="flex flex-row justify-end">
@@ -34,7 +34,7 @@
     </Advices-Form>
     <div class="mb-10">
       <router-link to="/vaccination">
-        <img class="absolute top-112 right-63 mb-6" :src="vector" />
+        <img class="absolute top-59 right-63 mb-6" :src="vector" />
       </router-link>
     </div>
   </div>
@@ -103,3 +103,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+</style>

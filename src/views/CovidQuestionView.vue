@@ -5,7 +5,7 @@
       <div class="relative">
         <img :src="vaccineimg" alt="vaccineimg" class="-z-10" />
         <transition appear name="circle">
-          <img :src="mainLogo" class="absolute top-230 left-127 -z-10 opacity-100" />
+          <img :src="mainLogo" class="absolute top-230 left-6.25 -z-10 opacity-100" />
           <!-- <div class="absolute top-230 left-127 bg-slate-700 -z-10 w-[900px] h-[90px]"></div> -->
         </transition>
       </div>

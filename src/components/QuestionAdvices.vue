@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col w-32 mt-2.75">
     <div>
-      <p class="font-bold mb-2">{{ NonFormalMeetings }}</p>
+      <p class="font-bold text-22 mb-2">{{ NonFormalMeetings }}</p>
       <InputRadio
         type="radio"
         as="input"

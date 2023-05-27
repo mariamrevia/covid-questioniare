@@ -63,7 +63,9 @@
       >
         <p class="w-[350px] ml-[40px] mt-[35px]">
           რომ არ გადადო, ბარემ ახლავე დარეგისტრირდი
-          <a class="w-[100px] h-[100px]" :href="registrationLink">{{ registrationLink }}</a>
+          <a class="w-[100px] h-[100px] text-blue" :href="registrationLink">{{
+            registrationLink
+          }}</a>
         </p>
       </div>
 
@@ -100,15 +102,15 @@
         <ErrorMessage class="text-red" name="i_am_waiting" />
       </div>
       <p class="w-[350px] ml-[40px] mt-[35px]" v-if="data['i_am_waiting'] === 'not_planning'">
-        <a :href="registrationLink">👉 {{ registrationLink }}</a>
+        <a class="text-blue" :href="registrationLink"> {{ registrationLink }}</a>
       </p>
       <p
         class="w-[350px] ml-[40px] mt-[35px]"
         v-if="data['i_am_waiting'] === 'had_covid_and_planning_to_be_vaccinated'"
       >
-        ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება. 👉
-        რეგისტრაციის ბმული
-        <a :href="registrationLink">{{ registrationLink }}</a>
+        ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება. 
+        👉 რეგისტრაციის ბმული:
+        <a class="text-blue" :href="registrationLink"> {{ registrationLink }}</a>
       </p>
     </div>
     <div>

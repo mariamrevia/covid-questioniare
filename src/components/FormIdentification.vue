@@ -6,14 +6,14 @@
       name="first_name"
       @input="updateValue"
       :value="identificationData.first_name"
-      label="სახელი"
+      label="სახელი*"
       rules="required|minLength|alphabet"
     />
     <InputText
       as="input"
       name="last_name"
       id="last_name"
-      label="გვარი"
+      label="გვარი*"
       @input="updateValue"
       :value="identificationData.last_name"
       rules="required|minLength|alphabet"
@@ -22,7 +22,7 @@
     <InputText
       as="input"
       name="email"
-      label="მეილი"
+      label="მეილი*"
       @input="updateValue"
       id="email"
       :value="identificationData.email"

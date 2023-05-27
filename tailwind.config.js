@@ -18,7 +18,8 @@ export const theme = {
       7: '7rem',
       11: '11.5rem',
       3.6: '3.6rem',
-      67.5: '67.5rem'
+      67.5: '67.5rem',
+      50: '50rem'
     },
     width: {
       32: '32rem',
@@ -38,7 +39,8 @@ export const theme = {
       yellow: '#D6D16E',
       black: '#232323',
       red: '#F15524',
-      green: '#208298'
+      green: '#208298',
+      blue: '#1289AE'
     },
     fontFamily: {
       sans: ['bgpArial', 'Helvetica', 'Arial', 'sans-serif']
@@ -55,7 +57,8 @@ export const theme = {
       26.5: '26.5rem',
       49.24: '49.25rem',
       36.25: '36.25rem',
-      51: '51rem'
+      51: '51rem',
+      6.25: '6.25rem'
     },
     padding: {
       200: '12.5rem',
