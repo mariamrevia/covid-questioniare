@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import { Field,ErrorMessage } from 'vee-validate'
+import { Field, ErrorMessage } from 'vee-validate'
 import InputText from './ui/InputText.vue'
 import InputRadio from './ui/InputRadio.vue'
 export default {
@@ -117,24 +117,29 @@ export default {
     return {
       CovidQuestion: 'გაქვს გადატანილი Covid-19?*',
       TestQuestion: 'ანტისხეულების ტესტი გაქვს გაკეთებული?*',
-      TestDateQuestion:'თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა'
+      TestDateQuestion:
+        'თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა'
     }
   },
   computed: {
     data: {
       get() {
         return this.$store.getters['CovidQuestionModel/getData']
-      },
-      set(value, name) {
-        this.$store.dispatch('CovidQuestionModel/updateData', value, name)
       }
     },
-
     testDate() {
       return this.data.antibodies.test_date
     },
     testNumber() {
       return this.data.antibodies.number
+    }
+  },
+  watch: {
+    data: {
+      handler(updatedData) {
+        this.$store.dispatch('CovidQuestionModel/updateData', updatedData)
+      },
+      deep: true
     }
   },
   methods: {

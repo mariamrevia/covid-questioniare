@@ -1,6 +1,5 @@
 export default {
-    getData (state) {
-        return state.data
-
-    }
+  getData(state) {
+    return state.covidData
+  }
 }

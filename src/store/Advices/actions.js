@@ -2,7 +2,7 @@ import { sendData } from '@/services/api/form.js'
 import router from '@/router/index.js'
 
 export default {
-  updateAdviceData({ commit }, payload) {
+  updateAdvicesData({ commit }, payload) {
     console.log(payload)
     commit('updateAdvice', payload)
   },

@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-20">
+  <div class="mb-20 overflow-y-auto no-scrollbar h-50">
     <p class="w-32">{{ paragraph1 }}</p>
     <br />
     <p class="w-32">{{ paragraph2 }}</p>
@@ -8,8 +8,8 @@
       <div class="w-32 flex flex-col">
         <p class="font-bold text-22 mt-3 mb-2">{{ OpinionAboutMeeting }}</p>
         <textarea
-          :value="AdvicesData.what_about_meetings_in_live"
-          class="bg-transparent border-1 outline-none h-11 border-black mt-1.25"
+          :value="advicesData.what_about_meetings_in_live"
+          class="bg-transparent border outline-none h-11 border-black mt-1.25"
           name="what_about_meetings_in_live"
           @input="updateValue($event.target.value, 'what_about_meetings_in_live')"
         ></textarea>
@@ -17,10 +17,10 @@
           {{ OpiniionAboutEnviroment }}
         </p>
         <textarea
-          :value="AdvicesData.what_about_meetings_in_live"
-          class="bg-transparent border-1 outline-none h-11 border-black mt-1.25"
-          name="what_about_meetings_in_live"
-          @input="updateValue($event.target.value, 'what_about_meetings_in_live')"
+          :value="advicesData.tell_us_your_opinion_about_us"
+          class="bg-transparent border outline-none h-11 border-black mt-1.25"
+          name="tell_us_your_opinion_about_us"
+          @input="updateValue($event.target.value, 'tell_us_your_opinion_about_us')"
         ></textarea>
       </div>
       <div class="flex flex-row justify-end">
@@ -34,7 +34,7 @@
     </Advices-Form>
     <div class="mb-10">
       <router-link to="/vaccination">
-        <img class="absolute top-112 right-63 mb-6" :src="vector" />
+        <img class="absolute top-59 right-63 mb-6" :src="vector" />
       </router-link>
     </div>
   </div>
@@ -55,17 +55,18 @@ export default {
     return {
       vector,
       OpinionAboutMeeting: 'რას ფიქრობ ფიზიკურ შეკრებებზე?',
-      OpiniionAboutEnviroment:'რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?'
+      OpiniionAboutEnviroment:
+        'რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?'
     }
   },
 
   computed: {
     ...mapGetters({
-    AdvicesData: 'AdvicesModel/AdvicesData',
-    IdentificationData: 'IdentificationModel/IdentificationData',
-    vaccinationData: 'vaccinationModel/vaccinationData',
-    getData: 'CovidQuestionModel/getData'
-  }),
+      advicesData: 'AdvicesModel/advicesData',
+      identificationData: 'IdentificationModel/identificationData',
+      vaccinationData: 'vaccinationModel/vaccinationData',
+      getData: 'CovidQuestionModel/getData'
+    }),
     combinedData() {
       let hadVaccine
       let antiBodyTest
@@ -80,10 +81,10 @@ export default {
       } else if (this.getData.had_antibody_test === 'no') {
         antiBodyTest = false
       }
-      const numberOfdaysInOffice = Number(this.AdvicesData.number_of_days_from_office)
+      const numberOfdaysInOffice = Number(this.advicesData.number_of_days_from_office)
       return {
-        ...this.AdvicesData,
-        ...this.IdentificationData,
+        ...this.advicesData,
+        ...this.identificationData,
         ...this.vaccinationData,
         ...this.getData,
         had_vaccine: hadVaccine,
@@ -94,7 +95,7 @@ export default {
   },
   methods: {
     updateValue(value, name) {
-      this.$store.dispatch('AdvicesModel/updateAdviceData', { value, name })
+      this.$store.dispatch('AdvicesModel/updateAdvicesData', { value, name })
     },
     onSubmit() {
       this.$store.dispatch('AdvicesModel/sendDatatoAPI', this.combinedData)
@@ -102,3 +103,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+</style>

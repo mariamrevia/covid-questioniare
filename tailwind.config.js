@@ -17,25 +17,33 @@ export const theme = {
       3: '3.1rem',
       7: '7rem',
       11: '11.5rem',
-      3.6: '3.6rem'
+      3.6: '3.6rem',
+      67.5: '67.5rem',
+      50: '50rem'
     },
     width: {
       32: '32rem',
       29: '29rem',
       15: '15rem',
-      11: '11rem'
+      11: '11rem',
+      120: '120rem'
     },
     fontSize: {
       30: '1.8rem',
       22: '1.3rem',
-      1.25: '1.25rem'
+      1.25: '1.25rem',
+      4: '4rem'
     },
     colors: {
       maincolor: '#EAEAEA',
       yellow: '#D6D16E',
       black: '#232323',
       red: '#F15524',
-      green: '#208298'
+      green: '#208298',
+      blue: '#1289AE'
+    },
+    fontFamily: {
+      sans: ['bgpArial', 'Helvetica', 'Arial', 'sans-serif']
     },
     inset: {
       230: '14.3rem',
@@ -44,8 +52,13 @@ export const theme = {
       55: '55rem',
       3.75: '3.75rem',
       5: '5rem',
-      112:'112rem',
-      63:'63rem'
+      112: '112rem',
+      63: '63rem',
+      26.5: '26.5rem',
+      49.24: '49.25rem',
+      36.25: '36.25rem',
+      51: '51rem',
+      6.25: '6.25rem'
     },
     padding: {
       200: '12.5rem',

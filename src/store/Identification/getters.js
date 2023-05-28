@@ -1,3 +1,3 @@
 export default {
-  IdentificationData: (state) => state.IdentificationData
+  identificationData: (state) => state.identificationData
 }

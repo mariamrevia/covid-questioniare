@@ -1,3 +1,3 @@
 export default {
-    AdvicesData: (state) => state.AdvicesData
-  }
+  advicesData: (state) => state.advicesData
+}

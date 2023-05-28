@@ -1,17 +1,21 @@
 import mutations from './mutations'
 import actions from './actions'
 import getters from './getters'
-export default  {
-namespaced:true,
-    state: {
-        IdentificationData: {
-            first_name: '',
-            last_name: '',
-            email: ''
+
+const storedIdentificationData = JSON.parse(localStorage.getItem('identificationData'))
+export default {
+  namespaced: true,
+  state: {
+    identificationData: storedIdentificationData
+      ? storedIdentificationData.identificationData
+      : {
+          first_name: '',
+          last_name: '',
+          email: ''
         }
-    },
-  
-    mutations: mutations,
-    actions: actions,
-    getters: getters
+  },
+
+  mutations: mutations,
+  actions: actions,
+  getters: getters
 }
