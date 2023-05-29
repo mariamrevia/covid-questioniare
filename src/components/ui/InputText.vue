@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col">
-    <label class="mt-[47px] mb-[20px] font-bold text-[20px]" :for="name">{{ label }}</label>
+    <label class="mt-2.9 mb-1.25font-bold text-22" :for="name">{{ label }}</label>
     <Field
-      class="w-[513px] h-[50px] border border-black bg-transparent pl-4"
+      class="w-32 h-3 border border-black bg-transparent pl-4"
       :as="as"
       :value="value"
       @input="updateValue($event.target.value, name)"

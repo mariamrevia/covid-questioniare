@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row align-middle items-center h-[40px]">
+  <div class="flex flex-row align-middle items-center h-2.5">
     <Field v-slot="{ field }" :name="name" :rules="rules" :value="modelValue">
       <input
         class="w-1.4 h-1.2 accent-black"
@@ -13,7 +13,7 @@
       />
     </Field>
 
-    <label for="name" class="flex text-[15px] items-center mb-1 ml-[18px] align-middle h-[26px]">{{
+    <label for="name" class="flex text-1 items-center mb-1 ml-1.1 align-middle h-1.6">{{
       label
     }}</label>
   </div>
