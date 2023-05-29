@@ -1,35 +1,45 @@
-# covid-questionaire
 
-This template should help get you started developing with Vue 3 in Vite.
+## Covid-Questionaire
 
-## Recommended IDE Setup
+The Covid-Questionnaire is a Vue application designed to collect information related to the user's COVID-19 experience. It provides interface with multiple forms to gather specific details. 
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Table of Contents
+- Prerequisites
+- Tech Stack
+- Getting Started
+- Development
 
-## Customize configuration
+## Prerequisites
+- npm@9 and up
+- tailwind@3.3.2
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+## Teck stack
+- Vue.js - Front-end framework
+- Vue Router - Vue.js library for routing and navigation
+- Vuex - Vue.js State manegment library
+- Vee-Validate - Vue.js library for Validation
+- TailwindCSS
 
-```sh
+
+
+## Getting started
+1. First you need to clone Movie-Quote repository from github
+```bash
+https://github.com/RedberryInternship/mariam-revia-covid-questionnaire.git
+```
+2. Install all the  dependencies:
+```bash
 npm install
 ```
-
-### Compile and Hot-Reload for Development
-
-```sh
+and also 
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+## Development
 
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+You may run:
+```bash
+npm run dev
+  ```
