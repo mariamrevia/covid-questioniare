@@ -10,7 +10,11 @@ export const theme = {
       7: '7rem',
       1.25: '1.25',
       2.75: '2.75rem',
-      1.5: '1.5rem'
+      1.5: '1.5rem',
+      1.1:'1.1rem',
+      2.9:'2.9rem',
+      2.5:'2.5rem',
+      2.1:'2.1rem',
     },
     height: {
       2.5: '2.5rem',
@@ -19,20 +23,26 @@ export const theme = {
       11: '11.5rem',
       3.6: '3.6rem',
       67.5: '67.5rem',
-      50: '50rem'
+      50: '50rem',
+      1.6:'1.6rem',
+      6.23:'2.25rem'
     },
     width: {
       32: '32rem',
       29: '29rem',
       15: '15rem',
       11: '11rem',
-      120: '120rem'
+      120: '120rem',
+      22:'22rem',
+      6.23:'2.25rem'
+
     },
     fontSize: {
       30: '1.8rem',
       22: '1.3rem',
       1.25: '1.25rem',
-      4: '4rem'
+      4: '4rem',
+      1:'1rem'
     },
     colors: {
       maincolor: '#EAEAEA',
