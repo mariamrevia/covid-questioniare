@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import InputText from './ui/InputText.vue'
+import InputText from '@/components/ui/InputText.vue'
 import { Form } from 'vee-validate'
 import { mapGetters } from 'vuex'
 import navigationButton from '@/assets/images/Vector2.png'

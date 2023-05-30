@@ -126,7 +126,7 @@
 
 <script>
 import { Form, ErrorMessage } from 'vee-validate'
-import InputRadio from './ui/InputRadio.vue'
+import InputRadio from '@/components/ui/InputRadio.vue'
 import navigationButton from '@/assets/images/Vector2.png'
 import vector from '@/assets/images/Vector7.png'
 export default {

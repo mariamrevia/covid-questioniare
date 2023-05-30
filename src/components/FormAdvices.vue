@@ -42,7 +42,7 @@
 
 <script>
 import { Form } from 'vee-validate'
-import AdvicesQuestion from './QuestionAdvices.vue'
+import AdvicesQuestion from '@/components/QuestionAdvices.vue'
 import { mapGetters } from 'vuex'
 import vector from '@/assets/images/Vector7.png'
 export default {

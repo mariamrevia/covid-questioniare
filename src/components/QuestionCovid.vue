@@ -104,8 +104,8 @@
 
 <script>
 import { Field, ErrorMessage } from 'vee-validate'
-import InputText from './ui/InputText.vue'
-import InputRadio from './ui/InputRadio.vue'
+import InputText from '@/components/ui/InputText.vue'
+import InputRadio from '@/components/ui/InputRadio.vue'
 export default {
   components: {
     Field,

@@ -102,7 +102,7 @@
 </template>
 <script>
 import { ErrorMessage } from 'vee-validate'
-import InputRadio from './ui/InputRadio.vue'
+import InputRadio from '@/components/ui/InputRadio.vue'
 export default {
   components: {
     InputRadio,
