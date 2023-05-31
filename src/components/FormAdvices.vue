@@ -36,7 +36,7 @@
       </div>
     </Advices-Form>
     <div class="mb-10">
-      <router-link to="/vaccination">
+      <router-link to="vaccination">
         <img class="absolute top-59 right-63 mb-6" :src="directionBack" />
       </router-link>
     </div>

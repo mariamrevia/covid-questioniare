@@ -23,7 +23,7 @@ export default {
 
     try {
       await sendData(filteredPayload)
-      router.push('/thankyou')
+      router.push('thankYou')
     } catch (error) {
       console.log(error)
     }

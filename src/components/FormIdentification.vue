@@ -66,7 +66,7 @@ export default {
     },
 
     onSubmit() {
-      this.$router.push('/covidquestion')
+      this.$router.push('covidQuestion')
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <CovidQuestion-Form @submit="onSubmit">
     <CovidQuestion />
-   <ButtonNavigation to="/identification"/>
+   <ButtonNavigation to="identification"/>
   </CovidQuestion-Form>
 </template>
 <script>
@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.$router.push('/vaccination')
+      this.$router.push('vaccination')
     }
   }
 }

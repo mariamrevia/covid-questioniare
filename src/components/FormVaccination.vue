@@ -107,7 +107,7 @@
         <a class="text-blue" :href="registrationLink"> {{ registrationLink }}</a>
       </p>
     </div>
-    <ButtonNavigation to="/covidquestion" />
+    <ButtonNavigation to="covidQuestion" />
   </VactinationForm>
 </template>
 
@@ -115,9 +115,7 @@
 import { Form, ErrorMessage } from 'vee-validate'
 import ButtonNavigation from '@/components/ui/ButtonNavigation.vue'
 import InputRadio from '@/components/ui/InputRadio.vue'
-import directionForward from '@/assets/images/directionForward.png'
-import SelectorVaccination from './layout/SelectorVaccination.vue'
-import directionBack from '@/assets/images/directionBack.png'
+import SelectorVaccination from '@/components/layout/SelectorVaccination.vue'
 export default {
   components: {
     VactinationForm: Form,
@@ -129,9 +127,7 @@ export default {
 
   data() {
     return {
-      registrationLink: 'https://booking.moh.gov.ge/',
-      directionBack,
-      directionForward
+      registrationLink: 'https://booking.moh.gov.ge/'
     }
   },
   computed: {
@@ -152,7 +148,7 @@ export default {
 
   methods: {
     onSubmit() {
-      this.$router.push('/advices')
+      this.$router.push('advices')
     }
   }
 }

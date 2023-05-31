@@ -7,7 +7,7 @@
     </transition>
     <transition name="nested">
       <div v-show="showText" class="w-11 flex-wrap text-center with-shadow">
-        <router-link to="/identification">
+        <router-link to="identification">
           <div class="container">
             <p class="flex items-center justify-center mt-101 text-30 font-bold from-neutral-700">
               <img :src="startingPageText1" class="relative" />

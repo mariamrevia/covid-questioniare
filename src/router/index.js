@@ -9,12 +9,12 @@ import ThankYouView from '@/views/ThankYouView.vue'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', component: StartingPageView },
-    { path: '/identification', component: IdentficationView },
-    { path: '/covidquestion', component: CovidQuestionView },
-    { path: '/vaccination', component: VaccinationView },
-    { path: '/advices', component: AdvicesView },
-    { path: '/thankyou', component: ThankYouView }
+    { path: '/', name: 'startingPage', component: StartingPageView },
+    { path: '/identification', name: 'identification', component: IdentficationView },
+    { path: '/covidquestion', name: 'covidQuestion', component: CovidQuestionView },
+    { path: '/vaccination', name: 'vaccination', component: VaccinationView },
+    { path: '/advices', name: 'advices', component: AdvicesView },
+    { path: '/thankyou', name: 'thankYou', component: ThankYouView }
   ]
 })
 
