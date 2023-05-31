@@ -1,12 +1,12 @@
 <template>
   <div class="mb-20 overflow-y-auto no-scrollbar h-50">
-    <p class="w-32">{{ paragraph1 }}</p>
+    <p class="w-32">რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა წლების განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი, ბევრისთვის კი — ჩვენთან გადმოსვლის</p>
     <br />
-    <p class="w-32">{{ paragraph2 }}</p>
+    <p class="w-32"> პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.</p>
     <Advices-Form @submit="onSubmit">
       <AdvicesQuestion />
       <div class="w-32 flex flex-col">
-        <p class="font-bold text-22 mt-3 mb-2">{{ OpinionAboutMeeting }}</p>
+        <p class="font-bold text-22 mt-3 mb-2">რას ფიქრობ ფიზიკურ შეკრებებზე?</p>
         <textarea
           :value="advicesData.what_about_meetings_in_live"
           class="bg-transparent border outline-none h-11 border-black mt-1.25"
@@ -14,7 +14,7 @@
           @input="updateValue($event.target.value, 'what_about_meetings_in_live')"
         ></textarea>
         <p class="font-bold mb-2 whitespace-break-spaces text-22 mt-3">
-          {{ OpiniionAboutEnviroment }}
+          რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?
         </p>
         <textarea
           :value="advicesData.tell_us_your_opinion_about_us"
@@ -54,9 +54,6 @@ export default {
   data() {
     return {
       vector,
-      OpinionAboutMeeting: 'რას ფიქრობ ფიზიკურ შეკრებებზე?',
-      OpiniionAboutEnviroment:
-        'რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?'
     }
   },
 

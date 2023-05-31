@@ -2,7 +2,7 @@
   <VactinationForm @submit="onSubmit">
     <div>
       <div class="flex flex-col w-32 mt-2.75">
-        <p for="name" class="font-bold mb-1.5 text-22">{{ VactineQuestion }}</p>
+        <p for="name" class="font-bold mb-1.5 text-22">უკვე აცრილი ხარ?*</p>
         <InputRadio
           type="radio"
           as="input"
@@ -24,7 +24,7 @@
         <ErrorMessage class="text-red" name="had_vaccine" />
       </div>
       <div class="flex flex-col w-32 mt-2.75" v-if="data['had_vaccine'] === 'yes'">
-        <p for="name" class="font-bold mb-1.5 text-22">{{ StageQuestion }}</p>
+        <p for="name" class="font-bold mb-1.5 text-22">აირჩიე რა ეტაპზე ხარ*</p>
         <InputRadio
           type="radio"
           as="input"
@@ -70,7 +70,7 @@
       </div>
 
       <div class="flex flex-col w-32 mt-2.75" v-if="data['had_vaccine'] === 'no'">
-        <p for="name" class="font-bold mb-1.5 text-22">{{ WaitingQuestion }}</p>
+        <p for="name" class="font-bold mb-1.5 text-22">რას ელოდები</p>
         <InputRadio
           type="radio"
           as="input"
@@ -141,9 +141,6 @@ export default {
       registrationLink: 'https://booking.moh.gov.ge/',
       navigationButton,
       vector,
-      VactineQuestion: 'უკვე აცრილი ხარ?*',
-      StageQuestion: 'აირჩიე რა ეტაპზე ხარ*',
-      WaitingQuestion: 'რას ელოდები'
     }
   },
   computed: {
