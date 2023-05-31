@@ -10,8 +10,8 @@
         <router-link to="/identification">
           <div class="container">
             <p class="flex items-center justify-center mt-101 text-30 font-bold from-neutral-700">
-              <img :src="text1" class="relative hover: ml-1" />
-              <img :src="text2" class="hover:opacity-100 absolute top-944 left-50% opacity-0" />
+              <img :src="startingPageText1" class="relative" />
+              <img :src="startingPageText2" class="hover:opacity-100 absolute  opacity-0" />
             </p>
           </div>
         </router-link>
@@ -22,18 +22,17 @@
 
 <script>
 import IconLogo from '@/components/icons/IconLogo.vue'
-import text2 from '@/assets/images/text2.png'
-import text1 from '@/assets/images/text.png'
+import startingPageText2 from '@/assets/images/startingPageText2.png'
+import startingPageText1 from '@/assets/images/startingPageText1.png'
 export default {
   components: {
     IconLogo
   },
   data() {
     return {
-      message: 'კითხვარის დაწყება',
       showText: false,
-      text2,
-      text1
+      startingPageText2,
+      startingPageText1
     }
   },
   methods: {

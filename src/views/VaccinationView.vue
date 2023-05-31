@@ -5,7 +5,7 @@
     <div class="relative">
       <img :src="doctor" alt="vaccineimg" class="-z-10" />
       <transition appear name="star">
-        <img :src="mainLogo" class="absolute top-[0px] left-[35px] -z-10 opacity-100" />
+        <img :src="vaccinationLogo" class="absolute top-[0px] left-[35px] -z-10 opacity-100" />
         <!-- <div class="absolute top-230 left-127 bg-slate-700 -z-10 w-[900px] h-[90px]"></div> -->
       </transition>
     </div>
@@ -13,8 +13,8 @@
 </template>
 <script>
 import FormVaccination from '@/components/FormVaccination.vue'
-import mainLogo from '@/assets/images/main logo (3).png'
-import doctor from '@/assets/images/doctor2.png'
+import vaccinationLogo from '@/assets/images/vaccinationLogo.png'
+import doctor from '@/assets/images/vaccinationImage.png'
 import TheHeader from '@/components/shared/TheHeader.vue'
 export default {
   components: {
@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       doctor,
-      mainLogo
+      vaccinationLogo
     }
   }
 }

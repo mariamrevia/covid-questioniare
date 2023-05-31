@@ -3,19 +3,19 @@
     <CovidQuestion/>
     <div>
       <router-link to="/identification">
-        <img class="absolute top-59 right-[1019px] z-10" :src="vector" />
+        <img class="absolute top-59 right-[1019px] z-10" :src="directionBack" />
       </router-link>
       <button type="submit" class="absolute top-59 right-55 z-10">
-        <img  :src="navigationButton" />
+        <img  :src="directionForward" />
       </button>
     </div>
   </CovidQuestion-Form>
 </template>
 <script>
 import { Form } from 'vee-validate'
-import navigationButton from '@/assets/images/Vector2.png'
+import directionForward from '@/assets/images/directionForward.png'
 import CovidQuestion from '@/components/QuestionCovid.vue'
-import vector from '@/assets/images/Vector7.png'
+import directionBack from '@/assets/images/directionBack.png'
 export default {
   components: {
     CovidQuestionForm: Form,
@@ -23,8 +23,8 @@ export default {
   },
   data() {
     return {
-      navigationButton,
-      vector,
+      directionForward,
+      directionBack,
 
     }
   },

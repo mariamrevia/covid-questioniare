@@ -30,7 +30,7 @@
     />
 
     <button class="absolute top-59 right-55 z-10">
-      <img :src="navigationButton" />
+      <img :src="directionForward" />
     </button>
 
     <div class="h-7 w-22 mt-7">
@@ -44,7 +44,7 @@
 import InputText from '@/components/ui/InputText.vue'
 import { Form } from 'vee-validate'
 import { mapGetters } from 'vuex'
-import navigationButton from '@/assets/images/Vector2.png'
+import directionForward from '@/assets/images/directionForward.png'
 export default {
   components: {
     IdentificationForm: Form,
@@ -53,7 +53,7 @@ export default {
 
   data() {
     return {
-      navigationButton
+      directionForward
     }
   },
   computed: {

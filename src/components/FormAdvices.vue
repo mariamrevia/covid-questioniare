@@ -37,7 +37,7 @@
     </Advices-Form>
     <div class="mb-10">
       <router-link to="/vaccination">
-        <img class="absolute top-59 right-63 mb-6" :src="vector" />
+        <img class="absolute top-59 right-63 mb-6" :src="directionBack" />
       </router-link>
     </div>
   </div>
@@ -47,18 +47,19 @@
 import { Form } from 'vee-validate'
 import AdvicesQuestion from '@/components/QuestionAdvices.vue'
 import { mapGetters } from 'vuex'
-import vector from '@/assets/images/Vector7.png'
+import directionBack from '@/assets/images/directionBack.png'
 import textArea from '@/components/ui/TextArea.vue'
 export default {
   components: {
     AdvicesForm: Form,
     AdvicesQuestion,
-    textArea
+    textArea,
+    
   },
 
   data() {
     return {
-      vector
+      directionBack
     }
   },
 

@@ -115,10 +115,10 @@
     </div>
     <div>
       <button @click="navigateBack" class="absolute top-59 right-63 z-10">
-        <img :src="vector" />
+        <img :src="directionBack" />
       </button>
       <button type="submit" class="absolute top-59 right-55 z-10">
-        <img :src="navigationButton" />
+        <img :src="directionForward" />
       </button>
     </div>
   </VactinationForm>
@@ -127,8 +127,8 @@
 <script>
 import { Form, ErrorMessage } from 'vee-validate'
 import InputRadio from '@/components/ui/InputRadio.vue'
-import navigationButton from '@/assets/images/Vector2.png'
-import vector from '@/assets/images/Vector7.png'
+import directionForward from '@/assets/images/directionForward.png'
+import directionBack from '@/assets/images/directionBack.png'
 export default {
   components: {
     VactinationForm: Form,
@@ -139,8 +139,9 @@ export default {
   data() {
     return {
       registrationLink: 'https://booking.moh.gov.ge/',
-      navigationButton,
-      vector,
+      directionBack,
+      directionForward
+     
     }
   },
   computed: {

@@ -4,9 +4,9 @@
     <div class="pl-200 pr-165 flex flex-row justify-between">
       <FormIdentification />
       <div class="relative">
-        <img :src="mainLogo" alt="mainLogo" class="-z-10" />
+        <img :src="IdentificationImage" alt="mainLogo" class="-z-10" />
         <transition appear name="line">
-          <img :src="linePhoto" class="absolute top-230 left-127 -z-10 opacity-100" />
+          <img :src="identificationLogo" class="absolute top-230 left-127 -z-10 opacity-100" />
           <!-- <div class="absolute top-230 left-127 bg-slate-700 -z-10 w-[900px] h-[90px]"></div> -->
         </transition>
       </div>
@@ -14,8 +14,8 @@
   </div>
 </template>
 <script>
-import mainLogo from '@/assets/images/IdentificationImage.png'
-import linePhoto from '@/assets/images/line.png'
+import IdentificationImage from '@/assets/images/IdentificationImage.png'
+import identificationLogo from '@/assets/images/identificationLogo.png'
 import FormIdentification from '@/components/FormIdentification.vue'
 import TheHeader from '@/components/shared/TheHeader.vue'
 
@@ -26,8 +26,8 @@ export default {
     TheHeader
   },
   data: () => ({
-    mainLogo,
-    linePhoto
+    IdentificationImage,
+    identificationLogo
   }),
  
 }
