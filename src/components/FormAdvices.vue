@@ -100,9 +100,14 @@ export default {
     updateValue(value, name) {
       this.$store.dispatch('AdvicesModel/updateAdvicesData', { value, name })
     },
-    onSubmit() {
-      this.$store.dispatch('AdvicesModel/sendDatatoAPI', this.combinedData)
+    async onSubmit() {
+    try {
+      await this.$store.dispatch('AdvicesModel/sendDatatoAPI', this.combinedData);
+    } catch (error) {
+      console.log(error);
+      throw error;
     }
+  }
   }
 }
 </script>
