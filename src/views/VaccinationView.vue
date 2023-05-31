@@ -1,12 +1,11 @@
 <template>
-  <TheHeader currentPage="3"/>
+  <TheHeader currentPage="3" />
   <div class="pl-200 pr-165 flex flex-row justify-between">
     <FormVaccination />
     <div class="relative">
       <img :src="doctor" alt="vaccineimg" class="-z-10" />
       <transition appear name="star">
         <img :src="vaccinationLogo" class="absolute top-[0px] left-[35px] -z-10 opacity-100" />
-        <!-- <div class="absolute top-230 left-127 bg-slate-700 -z-10 w-[900px] h-[90px]"></div> -->
       </transition>
     </div>
   </div>
