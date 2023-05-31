@@ -1,27 +1,30 @@
 <template>
   <div class="mb-20 overflow-y-auto no-scrollbar h-50">
-    <p class="w-32">რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა წლების განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი, ბევრისთვის კი — ჩვენთან გადმოსვლის</p>
+    <p class="w-32">
+      რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი თანამშრომლები
+      ქმნით, ბევრისთვის არის და ყოფილა წლების განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი,
+      ბევრისთვის კი — ჩვენთან გადმოსვლის
+    </p>
     <br />
-    <p class="w-32"> პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.</p>
+    <p class="w-32">
+      პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ პირისპირ და ყოველდღიური კომუნიკაციაც
+      გაიშვიათდა.
+    </p>
     <Advices-Form @submit="onSubmit">
       <AdvicesQuestion />
       <div class="w-32 flex flex-col">
-        <p class="font-bold text-22 mt-3 mb-2">რას ფიქრობ ფიზიკურ შეკრებებზე?</p>
-        <textarea
+        <text-Area
           :value="advicesData.what_about_meetings_in_live"
-          class="bg-transparent border outline-none h-11 border-black mt-1.25"
           name="what_about_meetings_in_live"
-          @input="updateValue($event.target.value, 'what_about_meetings_in_live')"
-        ></textarea>
-        <p class="font-bold mb-2 whitespace-break-spaces text-22 mt-3">
-          რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?
-        </p>
-        <textarea
+          @input="updateValue"
+          label="რას ფიქრობ ფიზიკურ შეკრებებზე?"
+        ></text-Area>
+        <text-Area
           :value="advicesData.tell_us_your_opinion_about_us"
-          class="bg-transparent border outline-none h-11 border-black mt-1.25"
           name="tell_us_your_opinion_about_us"
-          @input="updateValue($event.target.value, 'tell_us_your_opinion_about_us')"
-        ></textarea>
+          @input="updateValue"
+          label="რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?"
+        ></text-Area>
       </div>
       <div class="flex flex-row justify-end">
         <button
@@ -45,15 +48,17 @@ import { Form } from 'vee-validate'
 import AdvicesQuestion from '@/components/QuestionAdvices.vue'
 import { mapGetters } from 'vuex'
 import vector from '@/assets/images/Vector7.png'
+import textArea from '@/components/ui/TextArea.vue'
 export default {
   components: {
     AdvicesForm: Form,
-    AdvicesQuestion
+    AdvicesQuestion,
+    textArea
   },
 
   data() {
     return {
-      vector,
+      vector
     }
   },
 
