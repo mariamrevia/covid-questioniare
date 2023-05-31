@@ -29,19 +29,3 @@ export default {
   })
 }
 </script>
-<style>
-.line-enter-active {
-  transition: opacity 0.5s ease-in-out, transform 1s;
-}
-
-.line-enter-from {
-  transform: scale(0);
-  transform-origin: bottom left;
-  opacity: 0;
-}
-.line-enter-to {
-  transform: scale(1);
-  transform-origin: bottom left;
-  opacity: 1;
-}
-</style>

@@ -11,7 +11,7 @@
           <div class="container">
             <p class="flex items-center justify-center mt-101 text-30 font-bold from-neutral-700">
               <img :src="startingPageText1" class="relative" />
-              <img :src="startingPageText2" class="hover:opacity-100 absolute  opacity-0" />
+              <img :src="startingPageText2" class="hover:opacity-100 absolute opacity-0" />
             </p>
           </div>
         </router-link>
@@ -44,36 +44,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.logo-transition-enter-active {
-  transition: transform 0.6s cubic-bezier(1, 0, 0, 1);
-}
-
-.logo-transition-enter-from {
-  transform: scale(28);
-  opacity: 1;
-}
-
-.logo-transition-enter-to {
-  transform: scale(1);
-  opacity: 1;
-}
-
-.nested-enter-active {
-  animation: animateDown 1s ease forwards;
-  animation-delay: calc(0.1s * var(--char-index));
-}
-
-@keyframes animateDown {
-  0% {
-    transform: translateY(-30%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-</style>

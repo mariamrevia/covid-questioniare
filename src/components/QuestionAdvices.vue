@@ -38,7 +38,7 @@
         v-model="data.non_formal_meetings"
         rules="required"
       />
-      <ErrorMessage name="non_formal_meetings" />
+      <ErrorMessage class="text-red" name="non_formal_meetings" />
     </div>
     <div class="flex flex-col w-32 mt-2.75">
       <p class="text-22 font-bold mb-2">კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*</p>
@@ -96,7 +96,7 @@
         label="5"
         rules="required"
       />
-      <ErrorMessage name="number_of_days_from_office" />
+      <ErrorMessage class="text-red" name="number_of_days_from_office" />
     </div>
   </div>
 </template>

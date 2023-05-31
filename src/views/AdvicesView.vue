@@ -29,19 +29,3 @@
   }
   </script>
   
-  <style>
-  .star-enter-active {
-    transition: opacity 0.5s ease-in-out, transform 1s;
-  }
-  
-  .star-enter-from {
-    transform: scale(0);
-    transform: translate(-70%, 80%);
-    opacity: 0;
-  }
-  .star-enter-to {
-    transform: scale(1);
-    transform: translateX(0%);
-    opacity: 1;
-  }
-  </style>

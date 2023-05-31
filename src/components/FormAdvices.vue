@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-20 overflow-y-auto no-scrollbar h-50">
+  <div class="mt-1.25 overflow-y-auto no-scrollbar h-50">
     <p class="w-32">
       რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი თანამშრომლები
       ქმნით, ბევრისთვის არის და ყოფილა წლების განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი,
@@ -107,8 +107,3 @@ export default {
 }
 </script>
 
-<style>
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-</style>

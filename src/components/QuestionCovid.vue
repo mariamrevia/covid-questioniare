@@ -69,6 +69,7 @@
         as="input"
         placeholder="რიცხვი"
         rules="required"
+        id="date-input"
       />
     </div>
     <div
@@ -83,6 +84,7 @@
         @input="updateTestDate($event.target.value, 'test_date')"
         as="input"
         type="date"
+        id="date-input"
         placeholder="რიცხვი"
         rules="bothFieldsRequired:number"
       />

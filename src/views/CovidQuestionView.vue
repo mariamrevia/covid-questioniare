@@ -29,20 +29,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.circle-enter-active {
-  transition: opacity 0.5s ease-in-out, transform 1s;
-}
-
-.circle-enter-from {
-  transform: scale(0);
-  transform: translate(100%, -80%);
-  opacity: 0;
-}
-.circle-enter-to {
-  transform: scale(1);
-  transform: translateX(0%);
-  opacity: 1;
-}
-</style>
