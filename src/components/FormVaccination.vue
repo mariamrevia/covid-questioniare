@@ -1,8 +1,7 @@
 <template>
   <VactinationForm @submit="onSubmit">
     <div>
-      <div class="flex flex-col w-32 mt-2.75">
-        <p for="name" class="font-bold mb-1.5 text-22">უკვე აცრილი ხარ?*</p>
+      <Selector-Vaccination labelText="უკვე აცრილი ხარ?*">
         <InputRadio
           type="radio"
           as="input"
@@ -22,9 +21,8 @@
           rules="required"
         />
         <ErrorMessage class="text-red" name="had_vaccine" />
-      </div>
-      <div class="flex flex-col w-32 mt-2.75" v-if="data['had_vaccine'] === 'yes'">
-        <p for="name" class="font-bold mb-1.5 text-22">აირჩიე რა ეტაპზე ხარ*</p>
+      </Selector-Vaccination>
+      <Selector-Vaccination labelText="აირჩიე რა ეტაპზე ხარ*" v-if="data['had_vaccine'] === 'yes'">
         <InputRadio
           type="radio"
           as="input"
@@ -54,7 +52,7 @@
         />
 
         <ErrorMessage class="text-red" name="vaccination_stage" />
-      </div>
+      </Selector-Vaccination>
       <div
         v-if="
           data['vaccination_stage'] === 'first_dosage_and_not_registered_yet' &&
@@ -66,9 +64,7 @@
           <a class="w-6.23 h-6.23 text-blue" :href="registrationLink">{{ registrationLink }}</a>
         </p>
       </div>
-
-      <div class="flex flex-col w-32 mt-2.75" v-if="data['had_vaccine'] === 'no'">
-        <p for="name" class="font-bold mb-1.5 text-22">რას ელოდები</p>
+      <Selector-Vaccination labelText="რას ელოდები" v-if="data['had_vaccine'] === 'no'">
         <InputRadio
           type="radio"
           as="input"
@@ -96,9 +92,9 @@
           label="გადატანილი მაქვს და ვგეგმავ აცრას"
           rules="required"
         />
-
         <ErrorMessage class="text-red" name="i_am_waiting" />
-      </div>
+      </Selector-Vaccination>
+
       <p class="w-22 ml-2.5 mt-2.1" v-if="data['i_am_waiting'] === 'not_planning'">
         <a class="text-blue" :href="registrationLink"> {{ registrationLink }}</a>
       </p>
@@ -120,13 +116,15 @@ import { Form, ErrorMessage } from 'vee-validate'
 import ButtonNavigation from '@/components/ui/ButtonNavigation.vue'
 import InputRadio from '@/components/ui/InputRadio.vue'
 import directionForward from '@/assets/images/directionForward.png'
+import SelectorVaccination from './layout/SelectorVaccination.vue'
 import directionBack from '@/assets/images/directionBack.png'
 export default {
   components: {
     VactinationForm: Form,
     InputRadio,
     ErrorMessage,
-    ButtonNavigation
+    ButtonNavigation,
+    SelectorVaccination
   },
 
   data() {
