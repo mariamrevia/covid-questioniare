@@ -63,9 +63,7 @@
       >
         <p class="w-22 ml-2.5 mt-2.1">
           რომ არ გადადო, ბარემ ახლავე დარეგისტრირდი
-          <a class="w-6.23 h-6.23 text-blue" :href="registrationLink">{{
-            registrationLink
-          }}</a>
+          <a class="w-6.23 h-6.23 text-blue" :href="registrationLink">{{ registrationLink }}</a>
         </p>
       </div>
 
@@ -108,24 +106,18 @@
         class="w-22 ml-2.5 mt-2.1"
         v-if="data['i_am_waiting'] === 'had_covid_and_planning_to_be_vaccinated'"
       >
-        ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება. 
-        👉 რეგისტრაციის ბმული:
+        ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება. 👉
+        რეგისტრაციის ბმული:
         <a class="text-blue" :href="registrationLink"> {{ registrationLink }}</a>
       </p>
     </div>
-    <div>
-      <button @click="navigateBack" class="absolute top-59 right-63 z-10">
-        <img :src="directionBack" />
-      </button>
-      <button type="submit" class="absolute top-59 right-55 z-10">
-        <img :src="directionForward" />
-      </button>
-    </div>
+    <ButtonNavigation to="/covidquestion" />
   </VactinationForm>
 </template>
 
 <script>
 import { Form, ErrorMessage } from 'vee-validate'
+import ButtonNavigation from '@/components/ui/ButtonNavigation.vue'
 import InputRadio from '@/components/ui/InputRadio.vue'
 import directionForward from '@/assets/images/directionForward.png'
 import directionBack from '@/assets/images/directionBack.png'
@@ -133,7 +125,8 @@ export default {
   components: {
     VactinationForm: Form,
     InputRadio,
-    ErrorMessage
+    ErrorMessage,
+    ButtonNavigation
   },
 
   data() {
@@ -141,7 +134,6 @@ export default {
       registrationLink: 'https://booking.moh.gov.ge/',
       directionBack,
       directionForward
-     
     }
   },
   computed: {
@@ -163,9 +155,6 @@ export default {
   methods: {
     onSubmit() {
       this.$router.push('/advices')
-    },
-    navigateBack() {
-      this.$router.replace('/covidquestion')
     }
   }
 }
