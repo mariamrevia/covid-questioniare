@@ -3,7 +3,7 @@
     <CovidQuestion/>
     <div>
       <router-link to="/identification">
-        <img class="absolute top-59 right-[1019px] z-10" :src="directionBack" />
+        <img class="absolute top-59 right-63 z-10" :src="directionBack" />
       </router-link>
       <button type="submit" class="absolute top-59 right-55 z-10">
         <img  :src="directionForward" />

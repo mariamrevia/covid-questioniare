@@ -11,10 +11,11 @@ export const theme = {
       1.25: '1.25',
       2.75: '2.75rem',
       1.5: '1.5rem',
-      1.1:'1.1rem',
-      2.9:'2.9rem',
-      2.5:'2.5rem',
-      2.1:'2.1rem',
+      1.1: '1.1rem',
+      2.9: '2.9rem',
+      2.5: '2.5rem',
+      2.1: '2.1rem',
+      1.4: '1.4rem'
     },
     height: {
       2.5: '2.5rem',
@@ -24,8 +25,13 @@ export const theme = {
       3.6: '3.6rem',
       67.5: '67.5rem',
       50: '50rem',
-      1.6:'1.6rem',
-      6.23:'2.25rem'
+      1.6: '1.6rem',
+      6.23: '2.25rem',
+      0.1: '0.12rem',
+      6: '6rem'
+    },
+    borderRadius: {
+      1.6: '1.6rem'
     },
     width: {
       32: '32rem',
@@ -33,16 +39,17 @@ export const theme = {
       15: '15rem',
       11: '11rem',
       120: '120rem',
-      22:'22rem',
-      6.23:'2.25rem'
-
+      22: '22rem',
+      6.23: '2.25rem',
+      95: '95rem'
     },
     fontSize: {
       30: '1.8rem',
       22: '1.3rem',
       1.25: '1.25rem',
       4: '4rem',
-      1:'1rem'
+      1: '1rem',
+      2.5: '2.5rem'
     },
     colors: {
       maincolor: '#EAEAEA',

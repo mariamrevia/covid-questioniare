@@ -34,7 +34,7 @@
     </button>
 
     <div class="h-7 w-22 mt-7">
-      <hr class="w-15 h-[2px] bg-black mb-1.25" />
+      <hr class="w-15 h-0.1 bg-black mb-1.5" />
       <p>*-ით მონიშნული ველების შევსება სავალდებულოა</p>
     </div>
   </IdentificationForm>

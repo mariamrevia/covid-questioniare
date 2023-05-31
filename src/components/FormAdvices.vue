@@ -29,7 +29,7 @@
       <div class="flex flex-row justify-end">
         <button
           type="submit"
-          class="bg-green text-white text-lg mt-3 h-3.6 w-11 rounded-[1.6rem] content-end"
+          class="bg-green text-white text-lg mt-3 h-3.6 w-11 rounded-1.6 content-end"
         >
           დასრულება
         </button>
