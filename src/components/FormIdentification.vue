@@ -7,6 +7,7 @@
       @input="updateValue"
       :value="identificationData.first_name"
       label="სახელი*"
+      placeholder="იოსებ"
       rules="required|minLength|alphabet"
     />
     <InputText
@@ -14,6 +15,7 @@
       name="last_name"
       id="last_name"
       label="გვარი*"
+      placeholder="ჯუღაშვილი"
       @input="updateValue"
       :value="identificationData.last_name"
       rules="required|minLength|alphabet"
@@ -24,6 +26,7 @@
       name="email"
       label="მეილი*"
       @input="updateValue"
+      placeholder="fbi.redberry.ge"
       id="email"
       :value="identificationData.email"
       rules="required|email"
