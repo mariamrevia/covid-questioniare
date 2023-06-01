@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-col w-32 mt-2.75">
-      <p for="name" class="font-bold mb-1.5 text-1.25">{{ CovidQuestion }}</p>
+      <p for="name" class="font-bold mb-1.5 text-1.25">გაქვს გადატანილი Covid-19?*</p>
       <InputRadio
         type="radio"
         as="input"
@@ -35,7 +35,7 @@
     </div>
 
     <div class="flex flex-col w-32 mt-2.75" v-if="data['had_covid'] === 'yes'">
-      <p for="name" class="font-bold mb-1.5 text-1.25">{{ TestQuestion }}</p>
+      <p for="name" class="font-bold mb-1.5 text-1.25">ანტისხეულების ტესტი გაქვს გაკეთებული?*</p>
       <InputRadio
         type="radio"
         as="input"
@@ -69,13 +69,14 @@
         as="input"
         placeholder="რიცხვი"
         rules="required"
+        id="date-input"
       />
     </div>
     <div
       class="flex flex-col gap-8 w-32 mt-2.75"
       v-if="data['had_antibody_test'] === 'yes' && data['had_covid'] === 'yes'"
     >
-      <p class="font-bold text-1.25">{{ TestDateQuestion }}</p>
+      <p class="font-bold text-1.25">თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა</p>
       <Field
         name="test_date"
         class="w-32 h-3 border border-black bg-transparent pl-4"
@@ -83,6 +84,7 @@
         @input="updateTestDate($event.target.value, 'test_date')"
         as="input"
         type="date"
+        id="date-input"
         placeholder="რიცხვი"
         rules="bothFieldsRequired:number"
       />
@@ -104,22 +106,14 @@
 
 <script>
 import { Field, ErrorMessage } from 'vee-validate'
-import InputText from './ui/InputText.vue'
-import InputRadio from './ui/InputRadio.vue'
+import InputText from '@/components/ui/InputText.vue'
+import InputRadio from '@/components/ui/InputRadio.vue'
 export default {
   components: {
     Field,
     InputText,
     InputRadio,
     ErrorMessage
-  },
-  data() {
-    return {
-      CovidQuestion: 'გაქვს გადატანილი Covid-19?*',
-      TestQuestion: 'ანტისხეულების ტესტი გაქვს გაკეთებული?*',
-      TestDateQuestion:
-        'თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა'
-    }
   },
   computed: {
     data: {

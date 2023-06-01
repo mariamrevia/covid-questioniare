@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <label class="mt-2.9 mb-1.25font-bold text-22" :for="name">{{ label }}</label>
+    <label class="mt-2.9 mb-1.25 font-bold text-22" :for="name">{{ label }}</label>
     <Field
       class="w-32 h-3 border border-black bg-transparent pl-4"
       :as="as"
@@ -9,7 +9,8 @@
       :name="name"
       :rules="rules"
       :placeholder="placeholder"
-      :type="type"    
+      :type="type" 
+      :id="id"   
     />
     <ErrorMessage class="text-red" :name="name"></ErrorMessage>
   </div>
@@ -52,6 +53,11 @@ export default {
     default: false
   },
   type: {
+    type: String,
+    required:false,
+    default: '',
+  },
+  id: {
     type: String,
     required:false,
     default: '',

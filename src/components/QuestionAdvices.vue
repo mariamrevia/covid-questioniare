@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col w-32 mt-2.75">
     <div>
-      <p class="font-bold text-22 mb-2">{{ NonFormalMeetings }}</p>
+      <p class="font-bold text-22 mb-2">რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*</p>
       <InputRadio
         type="radio"
         as="input"
@@ -38,10 +38,10 @@
         v-model="data.non_formal_meetings"
         rules="required"
       />
-      <ErrorMessage name="non_formal_meetings" />
+      <ErrorMessage class="text-red" name="non_formal_meetings" />
     </div>
     <div class="flex flex-col w-32 mt-2.75">
-      <p class="text-22 font-bold mb-2">{{ WorkingInOffice }}</p>
+      <p class="text-22 font-bold mb-2">კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*</p>
       <InputRadio
         type="radio"
         as="input"
@@ -96,30 +96,18 @@
         label="5"
         rules="required"
       />
-      <ErrorMessage name="number_of_days_from_office" />
+      <ErrorMessage class="text-red" name="number_of_days_from_office" />
     </div>
   </div>
 </template>
 <script>
 import { ErrorMessage } from 'vee-validate'
-import InputRadio from './ui/InputRadio.vue'
+import InputRadio from '@/components/ui/InputRadio.vue'
 export default {
   components: {
     InputRadio,
     ErrorMessage
   },
-  data() {
-    return {
-      paragraph1:
-        'რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა წლების განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი, ბევრისთვის კი — ჩვენთან გადმოსვლის',
-      paragraph2:
-        ' პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.',
-      NonFormalMeetings:
-        'რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?*',
-      WorkingInOffice: 'კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*'
-    }
-  },
-
   computed: {
     data: {
       get() {

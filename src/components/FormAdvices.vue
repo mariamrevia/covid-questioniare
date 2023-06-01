@@ -1,40 +1,43 @@
 <template>
-  <div class="mb-20 overflow-y-auto no-scrollbar h-50">
-    <p class="w-32">{{ paragraph1 }}</p>
+  <div class="mt-1.25 overflow-y-auto no-scrollbar h-50">
+    <p class="w-32">
+      რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი თანამშრომლები
+      ქმნით, ბევრისთვის არის და ყოფილა წლების განმავლობაში მიზნებისთვის ერთად ბრძოლის მიზეზი,
+      ბევრისთვის კი — ჩვენთან გადმოსვლის
+    </p>
     <br />
-    <p class="w-32">{{ paragraph2 }}</p>
+    <p class="w-32">
+      პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ პირისპირ და ყოველდღიური კომუნიკაციაც
+      გაიშვიათდა.
+    </p>
     <Advices-Form @submit="onSubmit">
       <AdvicesQuestion />
       <div class="w-32 flex flex-col">
-        <p class="font-bold text-22 mt-3 mb-2">{{ OpinionAboutMeeting }}</p>
-        <textarea
+        <text-Area
           :value="advicesData.what_about_meetings_in_live"
-          class="bg-transparent border outline-none h-11 border-black mt-1.25"
           name="what_about_meetings_in_live"
-          @input="updateValue($event.target.value, 'what_about_meetings_in_live')"
-        ></textarea>
-        <p class="font-bold mb-2 whitespace-break-spaces text-22 mt-3">
-          {{ OpiniionAboutEnviroment }}
-        </p>
-        <textarea
+          @input="updateValue"
+          label="რას ფიქრობ ფიზიკურ შეკრებებზე?"
+        ></text-Area>
+        <text-Area
           :value="advicesData.tell_us_your_opinion_about_us"
-          class="bg-transparent border outline-none h-11 border-black mt-1.25"
           name="tell_us_your_opinion_about_us"
-          @input="updateValue($event.target.value, 'tell_us_your_opinion_about_us')"
-        ></textarea>
+          @input="updateValue"
+          label="რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?"
+        ></text-Area>
       </div>
       <div class="flex flex-row justify-end">
         <button
           type="submit"
-          class="bg-green text-white text-lg mt-3 h-3.6 w-11 rounded-[1.6rem] content-end"
+          class="bg-green text-white text-lg mt-3 h-3.6 w-11 rounded-1.6 content-end"
         >
           დასრულება
         </button>
       </div>
     </Advices-Form>
     <div class="mb-10">
-      <router-link to="/vaccination">
-        <img class="absolute top-59 right-63 mb-6" :src="vector" />
+      <router-link to="vaccination">
+        <img class="absolute top-59 right-63 mb-6" :src="directionBack" />
       </router-link>
     </div>
   </div>
@@ -42,21 +45,21 @@
 
 <script>
 import { Form } from 'vee-validate'
-import AdvicesQuestion from './QuestionAdvices.vue'
+import AdvicesQuestion from '@/components/QuestionAdvices.vue'
 import { mapGetters } from 'vuex'
-import vector from '@/assets/images/Vector7.png'
+import directionBack from '@/assets/images/directionBack.png'
+import textArea from '@/components/ui/TextArea.vue'
 export default {
   components: {
     AdvicesForm: Form,
-    AdvicesQuestion
+    AdvicesQuestion,
+    textArea,
+    
   },
 
   data() {
     return {
-      vector,
-      OpinionAboutMeeting: 'რას ფიქრობ ფიზიკურ შეკრებებზე?',
-      OpiniionAboutEnviroment:
-        'რას ფიქრობ არსებულ გარემოზე: რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?'
+      directionBack
     }
   },
 
@@ -97,15 +100,15 @@ export default {
     updateValue(value, name) {
       this.$store.dispatch('AdvicesModel/updateAdvicesData', { value, name })
     },
-    onSubmit() {
-      this.$store.dispatch('AdvicesModel/sendDatatoAPI', this.combinedData)
+    async onSubmit() {
+    try {
+      await this.$store.dispatch('AdvicesModel/sendDatatoAPI', this.combinedData);
+    } catch (error) {
+      console.log(error);
+      throw error;
     }
+  }
   }
 }
 </script>
 
-<style>
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-</style>

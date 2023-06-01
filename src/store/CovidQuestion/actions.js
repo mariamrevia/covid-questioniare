@@ -7,7 +7,6 @@ export default {
   },
 
   updateData({ commit }, payload) {
-    console.log(payload)
     commit('updateData', payload)
   }
 }

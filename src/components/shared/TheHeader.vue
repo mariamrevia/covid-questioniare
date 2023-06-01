@@ -1,35 +1,26 @@
 <template>
-  <div class="pl-200 pr-200 h-[95px] flex flex-col justify-center mt-89">
+  <div class="pl-200 pr-200 h-6 flex flex-col justify-center mt-89">
     <div class="flex flex-row justify-between items-center">
-      <IconName/>
-      <span class="text-[40px] items-center font-medium">
-         {{ currentPage }} /4
-      </span>
-
+      <IconName />
+      <span class="text-2.5 items-center font-medium"> {{ currentPage }} /4 </span>
     </div>
 
-    <hr class="w-[1520px] bg-black mt-[23px] h-[1.8px]" />
+    <hr class="w-95 bg-black mt-1.4 h-0.1" />
   </div>
 </template>
 
 <script>
-import IconName from '../icons/IconName.vue';
+import IconName from '@/components/icons/IconName.vue'
 export default {
-  components:{
+  components: {
     IconName
-
   },
   props: {
     currentPage: {
       type: Number,
       required: true,
-      default:null
-    },
-   
+      default: null
+    }
   }
-
-
-
 }
-
 </script>
