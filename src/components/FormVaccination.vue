@@ -1,5 +1,5 @@
 <template>
-  <VactinationForm @submit="onSubmit">
+  <VactinationForm @submit="onSubmit" v-slot={meta}>
     <div>
       <Selector-Vaccination labelText="უკვე აცრილი ხარ?*">
         <InputRadio
@@ -108,7 +108,7 @@
         <a class="text-blue" :href="registrationLink"> {{ registrationLink }}</a>
       </p>
     </div>
-    <ButtonNavigation to="covidQuestion" />
+    <ButtonNavigation :valid="meta.valid" to="covidQuestion" />
   </VactinationForm>
 </template>
 
