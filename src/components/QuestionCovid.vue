@@ -17,6 +17,7 @@
         name="had_covid"
         v-model="data.had_covid"
         value="no"
+        @change="clearData"
         label="არა"
         rules="required"
       />
@@ -28,6 +29,7 @@
         v-model="data.had_covid"
         value="have_right_now"
         label="ახლა მაქვს"
+        @change="clearData"
         rules="required"
       />
 
@@ -76,7 +78,9 @@
       class="flex flex-col gap-8 w-32 mt-2.75"
       v-if="data['had_antibody_test'] === 'yes' && data['had_covid'] === 'yes'"
     >
-      <p class="font-bold text-1.25">თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა</p>
+      <p class="font-bold text-1.25">
+        თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების რაოდენობა
+      </p>
       <Field
         name="test_date"
         class="w-32 h-3 border border-black bg-transparent pl-4"
@@ -145,6 +149,24 @@ export default {
     },
     updateTestNumber(value, name) {
       this.$store.commit('CovidQuestionModel/updateTestNumber', { value, name })
+    },
+    clearData() {
+      this.$store.commit('CovidQuestionModel/updateData', {
+        value: '',
+        name: 'had_antibody_test'
+      })
+      this.$store.commit('CovidQuestionModel/updateTestDate', {
+        value: '',
+        name: 'test_date'
+      })
+      this.$store.commit('CovidQuestionModel/updateTestNumber', {
+        value: '',
+        name: 'number'
+      })
+      this.$store.commit('CovidQuestionModel/updateData', {
+        value: '',
+        name: 'covid_sickness_date'
+      })
     }
   }
 }

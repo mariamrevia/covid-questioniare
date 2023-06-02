@@ -1,7 +1,7 @@
 <template>
-  <CovidQuestion-Form @submit="onSubmit">
+  <CovidQuestion-Form @submit="onSubmit" v-slot={meta}>
     <CovidQuestion />
-   <ButtonNavigation to="identification"/>
+   <ButtonNavigation :valid="meta.valid" to="identification"/>
   </CovidQuestion-Form>
 </template>
 <script>
@@ -16,6 +16,7 @@ export default {
   },
   methods: {
     onSubmit() {
+
       this.$router.push('vaccination')
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <VactinationForm @submit="onSubmit">
+  <VactinationForm @submit="onSubmit" v-slot={meta}>
     <div>
       <Selector-Vaccination labelText="უკვე აცრილი ხარ?*">
         <InputRadio
@@ -19,6 +19,7 @@
           value="no"
           label="არა"
           rules="required"
+          @change="clearVaccinationData"
         />
         <ErrorMessage class="text-red" name="had_vaccine" />
       </Selector-Vaccination>
@@ -107,7 +108,7 @@
         <a class="text-blue" :href="registrationLink"> {{ registrationLink }}</a>
       </p>
     </div>
-    <ButtonNavigation to="covidQuestion" />
+    <ButtonNavigation :valid="meta.valid" to="covidQuestion" />
   </VactinationForm>
 </template>
 
@@ -147,6 +148,12 @@ export default {
   },
 
   methods: {
+    clearVaccinationData() {
+      if (this.data.had_vaccine === 'no') {
+        this.data.vaccination_stage = ''
+        this.data.i_am_waiting = ''
+      }
+    },
     onSubmit() {
       this.$router.push('advices')
     }
