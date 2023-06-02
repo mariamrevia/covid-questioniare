@@ -19,6 +19,7 @@
           value="no"
           label="არა"
           rules="required"
+          @change="clearVaccinationData"
         />
         <ErrorMessage class="text-red" name="had_vaccine" />
       </Selector-Vaccination>
@@ -147,6 +148,12 @@ export default {
   },
 
   methods: {
+    clearVaccinationData() {
+      if (this.data.had_vaccine === 'no') {
+        this.data.vaccination_stage = ''
+        this.data.i_am_waiting = ''
+      }
+    },
     onSubmit() {
       this.$router.push('advices')
     }
