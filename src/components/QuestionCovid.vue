@@ -44,6 +44,7 @@
         name="had_antibody_test"
         v-model="data.had_antibody_test"
         value="yes"
+        @change="clearCovidData"
         label="კი"
         rules="required"
       />
@@ -52,6 +53,7 @@
         as="input"
         name="had_antibody_test"
         v-model="data.had_antibody_test"
+        @change="clearCovidData"
         value="no"
         label="არა"
         rules="required"
@@ -155,6 +157,20 @@ export default {
         value: '',
         name: 'had_antibody_test'
       })
+      this.$store.commit('CovidQuestionModel/updateTestDate', {
+        value: '',
+        name: 'test_date'
+      })
+      this.$store.commit('CovidQuestionModel/updateTestNumber', {
+        value: '',
+        name: 'number'
+      })
+      this.$store.commit('CovidQuestionModel/updateData', {
+        value: '',
+        name: 'covid_sickness_date'
+      })
+    },
+    clearCovidData() {
       this.$store.commit('CovidQuestionModel/updateTestDate', {
         value: '',
         name: 'test_date'
