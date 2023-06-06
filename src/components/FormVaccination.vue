@@ -10,6 +10,7 @@
           value="yes"
           label="კი"
           rules="required"
+          @change="clearVaccinationData"
         />
         <InputRadio
           type="radio"
@@ -149,7 +150,11 @@ export default {
 
   methods: {
     clearVaccinationData() {
-      if (this.data.had_vaccine === 'no') {
+      if (this.data.had_vaccine === 'yes') {
+        this.data.vaccination_stage = ''
+        this.data.i_am_waiting = ''
+      }
+      if(this.data.had_vaccine === 'no'){
         this.data.vaccination_stage = ''
         this.data.i_am_waiting = ''
       }
